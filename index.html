@@ -63,7 +63,7 @@
 		</nav>
 		
 		<nav>
-			总文章数 4
+			总文章数 5
 		</nav>
 		
 		<nav class="header-smart-menu">
@@ -159,6 +159,126 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-第四仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/25/%E7%AC%AC%E5%9B%9B%E4%BB%93%E5%BA%93/">第四仓库</a>
+    </h1>
+  
+
+        
+        
+<a href="/2019/12/25/%E7%AC%AC%E5%9B%9B%E4%BB%93%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2019-12-24T16:33:35.870Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="MarkDown-文档"><a href="#MarkDown-文档" class="headerlink" title="MarkDown  文档"></a>MarkDown  文档</h2><hr>
+<p>本期介绍一下用markdown编写文档</p>
+<p>首先先介绍几种软体编写工具，针对与markdown的书写，出现很多的工具，本次介绍两款：<br>一款是Visual Studio Code，它可以集成markdown的插件，可以ctrl+shift+X中输入markdown，选择install即可，安装之后 File选择本地.md文件，即可编写，同时会在本地浏览器进行预览。另一款是MarkText，这是一款比较方便的编辑器，使用时不必输入太多的符号，通过文字输入和鼠标点击先生成预览文件，操作完成后保存  源码.md文件。</p>
+<h3 id="1、标题：html中的h1-h6"><a href="#1、标题：html中的h1-h6" class="headerlink" title="1、标题：html中的h1-h6"></a>1、标题：html中的h1-h6</h3><pre><code>#一级标题  h1
+##二级标题  h2
+###三级标题  h3
+####四级标题  h4
+#####五级标题  h5
+######六级标题  h6
+
+h1和h2 还有其他的表示方法  
+h1 ===  
+h2 ---</code></pre><h3 id="2、换行"><a href="#2、换行" class="headerlink" title="2、换行"></a>2、换行</h3><pre><code>文档的换行有两种方法：  
+（1）、整段间隙换行：可以敲击两下“回车”
+（2）、文字间无间隙换行：可以在文字的后边敲击两下“空格”</code></pre><h3 id="3、引用文表现：引用名人的话"><a href="#3、引用文表现：引用名人的话" class="headerlink" title="3、引用文表现：引用名人的话"></a>3、引用文表现：引用名人的话</h3><pre><code>实现方法：在输入的文档前输入“&gt;+空格” 
+如：&gt; 冬天到了春天还会远吗？</code></pre><h3 id="4、分割线"><a href="#4、分割线" class="headerlink" title="4、分割线"></a>4、分割线</h3><pre><code>实现方法：
+（1）、回车 + ---
+（2）、***
+（3）、___
+（4）、- - -</code></pre><h3 id="5、强调表现"><a href="#5、强调表现" class="headerlink" title="5、强调表现"></a>5、强调表现</h3><pre><code>（1）、斜体：*+“文字”+*，_+“文字”+_
+（2）、粗体：**+&quot;文字&quot;+**，__+“文字”+__
+    例如：**东**南*西*北</code></pre><h3 id="6、列表表示"><a href="#6、列表表示" class="headerlink" title="6、列表表示"></a>6、列表表示</h3><pre><code>（1）、无序列表
+        + 空格
+        - 空格
+        * 空格
+（2）、有序列表
+        数字+“.”+空格</code></pre><h3 id="7、超文本连接的写法"><a href="#7、超文本连接的写法" class="headerlink" title="7、超文本连接的写法"></a>7、超文本连接的写法</h3><pre><code>（1）、方法一：直接写 https://www.baidu.com
+（2）、方法二：超链的文本先后加上尖括号&lt;https://www.baidu.com&gt;
+（3）、方法三：超文本连接[baidu](https://www.baidu.com)
+（4）、方法四：有title的显示[baidu](https://www.baidu.com &quot;测试百度&quot;)</code></pre><h3 id="8、代码高亮显示"><a href="#8、代码高亮显示" class="headerlink" title="8、代码高亮显示"></a>8、代码高亮显示</h3><pre><code>（1）、方法一：``` (官方推荐)
+（2）、方法二：~~~
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String a =<span class="string">"s"</span>;</span><br></pre></td></tr></table></figure></code></pre><h3 id="9、图片的引用显示"><a href="#9、图片的引用显示" class="headerlink" title="9、图片的引用显示"></a>9、图片的引用显示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">方法1：![alt文字](图片的url 图片标题)</span><br><span class="line">![my gitbook](https:&#x2F;&#x2F;nayipian.github.io&#x2F;images&#x2F;20191223&#x2F;header.jpg &quot;松鼠&quot;)</span><br><span class="line">方法2：点击图片连接网站</span><br><span class="line">[![my gitbook](https:&#x2F;&#x2F;nayipian.github.io&#x2F;images&#x2F;20191223&#x2F;header.jpg &quot;松鼠&quot;)](https:&#x2F;&#x2F;nayipian.github.io&#x2F;)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="10、表格"><a href="#10、表格" class="headerlink" title="10、表格"></a>10、表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">方法一：使用 “-” 和 “|” 生成简单表格</span><br><span class="line"></span><br><span class="line">例：</span><br><span class="line">| 表头1 | 表头2 | 表头3 |</span><br><span class="line">----|----|----|</span><br><span class="line">| 表格1 | 表格2 | 表格3 |</span><br><span class="line">| T2 | T2 | T3 |</span><br><span class="line"></span><br><span class="line">方法二：布局 居中 左 右</span><br><span class="line">例：</span><br><span class="line">| 居左 | 居中 | 居右 |</span><br><span class="line">|:---|:---:|---:|</span><br><span class="line">| 表格1 | 表格2 | 表格3 |</span><br><span class="line">| T2 | T2 | T3 |</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="left">居左</th>
+<th align="center">居中</th>
+<th align="right">居右</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">这是第一个格</td>
+<td align="center">这是第二格</td>
+<td align="right">这是第三格</td>
+</tr>
+<tr>
+<td align="left">T2</td>
+<td align="center">T2</td>
+<td align="right">T3</td>
+</tr>
+</tbody></table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/25/%E7%AC%AC%E5%9B%9B%E4%BB%93%E5%BA%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-第三仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -182,7 +302,6 @@
       
         <iframe scrolling="no" src="https://tianqiapi.com/api.php?style=tx&skin=sogou" frameborder="0" width="100%" height="30" allowtransparency="true"></iframe>
 
-<p>今天是2019年12月23日，又是新的一周</p>
 <p><img src="/images/20191223/header.jpg" alt=""></p>
 
       
