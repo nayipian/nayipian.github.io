@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>第六仓库 Springboot思想二 | Gordo 戈多</title>
+  <title>Archives: 2020/1 | Gordo 戈多</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本期浅显的介绍一下Springboot 核心注解和自动配置">
-<meta property="og:type" content="article">
-<meta property="og:title" content="第六仓库 Springboot思想二">
-<meta property="og:url" content="http://yoursite.com/2019/12/29/%E7%AC%AC%E5%85%AD%E4%BB%93%E5%BA%93/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Gordo 戈多">
+<meta property="og:url" content="http://yoursite.com/archives/2020/01/index.html">
 <meta property="og:site_name" content="Gordo 戈多">
-<meta property="og:description" content="本期浅显的介绍一下Springboot 核心注解和自动配置">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2019-12-31T02:01:23.797Z">
 <meta property="article:author" content="捕猹少年">
 <meta name="twitter:card" content="summary">
   
@@ -161,253 +157,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-第六仓库" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      第六仓库 Springboot思想二
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/01/01/%E7%AC%AC%E4%B8%83%E4%BB%93%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-01</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/01/01/%E7%AC%AC%E4%B8%83%E4%BB%93%E5%BA%93/">第七仓库 Oracle 那些词</a>
     </h1>
   
 
-        
-        
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
+        <div class="article-info info-on-right">
+          
+          
 
-<a href="/2019/12/29/%E7%AC%AC%E5%85%AD%E4%BB%93%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2019-12-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本期浅显的介绍一下Springboot 核心注解和自动配置</p>
-<a id="more"></a>
-<h3 id="Springboot-核心"><a href="#Springboot-核心" class="headerlink" title="Springboot 核心"></a>Springboot 核心</h3><p>springboot 的项目都会有一个*Application的入口类，入口类中有一个main方法，这是标准的java应用程序的入口。</p>
-<h4 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h4><h5 id="1、-SpringbootApplication-注解"><a href="#1、-SpringbootApplication-注解" class="headerlink" title="1、@SpringbootApplication 注解"></a>1、@SpringbootApplication 注解</h5><p>这是springboot的核心注解，同时它也是一个组合注解。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br></pre></td></tr></table></figure>
-<p>当点击进入之后会发现，内部的组合注解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@SpringBootConfiguration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(</span><br><span class="line">    excludeFilters = &#123;<span class="meta">@Filter</span>(</span><br><span class="line">    type = FilterType.CUSTOM,</span><br><span class="line">    classes = &#123;TypeExcludeFilter<span class="class">.<span class="keyword">class</span>&#125;</span></span><br><span class="line"><span class="class">)&#125;</span></span><br><span class="line"><span class="class">)</span></span><br></pre></td></tr></table></figure>
-<p>其中存在一个  @SpringBootConfiguration 的注解，点击进入 </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SpringBootConfiguration &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>发现这也是一个组合注解，对比两个注解，在一定程度上SpringBootApplication可以和SpringBootConfiguration可以替换</p>
-<h5 id="2、EnableAutoConfiguration-注解"><a href="#2、EnableAutoConfiguration-注解" class="headerlink" title="2、EnableAutoConfiguration 注解"></a>2、EnableAutoConfiguration 注解</h5><p>这个是Springboot开启自动配置注解，该注解会使Springboot根据项目中依赖的jar包自动配置项目设置项，具体如下：<br>如：我们在pom.xml中配置了spring-boot-start-web的依赖，项目中就会自动引入SpringMVC依赖，springboot就会自动配置tomcat和SpringMVC，spring-boot-start-web中还包括hebern json，webService等。  </p>
-<p>有时候可以关闭自动配置，操作方法如下：使用exclude<br>比如，不自动配置Redis，要手动配置</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span>(exclude=&#123;RedisAutoConfiguration<span class="class">.<span class="keyword">class</span>&#125;)</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="3、ComponentSacn-注解"><a href="#3、ComponentSacn-注解" class="headerlink" title="3、ComponentSacn 注解"></a>3、ComponentSacn 注解</h5><p>开启扫描，默认扫描注解所在的类的同级目录以及它的子目录。也可以自定义扫描。</p>
-<h3 id="Springboot-自动配置"><a href="#Springboot-自动配置" class="headerlink" title="Springboot 自动配置"></a>Springboot 自动配置</h3><p>Spring Boot 在进行Application对象实例化时会自动加载 META-INF/spring.factories文件，会将该配置文件中的配置载入Spring容器<br>执行main方法进行加载，当启动SpringApplication方法里边会有一个初始化方法initialize，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initialize</span><span class="params">(Object[] sources)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (sources != <span class="keyword">null</span> &amp;&amp; sources.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">           <span class="keyword">this</span>.sources.addAll(Arrays.asList(sources));</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">this</span>.webEnvironment = <span class="keyword">this</span>.deduceWebEnvironment();</span><br><span class="line">       <span class="keyword">this</span>.setInitializers(<span class="keyword">this</span>.getSpringFactoriesInstances(ApplicationContextInitializer<span class="class">.<span class="keyword">class</span>))</span>;</span><br><span class="line">       <span class="keyword">this</span>.setListeners(<span class="keyword">this</span>.getSpringFactoriesInstances(ApplicationListener<span class="class">.<span class="keyword">class</span>))</span>;</span><br><span class="line">       <span class="keyword">this</span>.mainApplicationClass = <span class="keyword">this</span>.deduceMainApplicationClass();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>在initialize方法会初始化方法中存在一个setInitializers方法，在这个方法中会获取初始化实例，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> &lt;T&gt; Collection&lt;? extends T&gt; getSpringFactoriesInstances(Class&lt;T&gt; type) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.getSpringFactoriesInstances(type, <span class="keyword">new</span> Class[<span class="number">0</span>]);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>触发getSpringFactoriesInstances方法,获取实例 进入到</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> &lt;T&gt; Collection&lt;? extends T&gt; getSpringFactoriesInstances(Class&lt;T&gt; type, Class&lt;?&gt;[] parameterTypes, Object... args) &#123;</span><br><span class="line">      ClassLoader classLoader = Thread.currentThread().getContextClassLoader();</span><br><span class="line">      Set&lt;String&gt; names = <span class="keyword">new</span> LinkedHashSet(SpringFactoriesLoader.loadFactoryNames(type, classLoader));</span><br><span class="line">      List&lt;T&gt; instances = <span class="keyword">this</span>.createSpringFactoriesInstances(type, parameterTypes, classLoader, args, names);</span><br><span class="line">      AnnotationAwareOrderComparator.sort(instances);</span><br><span class="line">      <span class="keyword">return</span> instances;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>触发createSpringFactoriesInstances方法 将配置类转化为对象， 进入到</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">createSpringFactoriesInstances</span><span class="params">(Class&lt;T&gt; type, Class&lt;?&gt;[] parameterTypes, ClassLoader classLoader, Object[] args, Set&lt;String&gt; names)</span> </span>&#123;</span><br><span class="line">        List&lt;T&gt; instances = <span class="keyword">new</span> ArrayList(names.size());</span><br><span class="line">        Iterator var7 = names.iterator();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(var7.hasNext()) &#123;</span><br><span class="line">            String name = (String)var7.next();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Class&lt;?&gt; instanceClass = ClassUtils.forName(name, classLoader);</span><br><span class="line">                Assert.isAssignable(type, instanceClass);</span><br><span class="line">                Constructor&lt;?&gt; constructor = instanceClass.getDeclaredConstructor(parameterTypes);</span><br><span class="line">                T instance = BeanUtils.instantiateClass(constructor, args);</span><br><span class="line">                instances.add(instance);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Throwable var12) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Cannot instantiate "</span> + type + <span class="string">" : "</span> + name, var12);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> instances;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>紧接着会执行 getSpringFactoriesInstances → loadFactoryNames</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> &lt;T&gt; Collection&lt;? extends T&gt; getSpringFactoriesInstances(Class&lt;T&gt; type, Class&lt;?&gt;[] parameterTypes, Object... args) &#123;</span><br><span class="line">        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();</span><br><span class="line">        Set&lt;String&gt; names = <span class="keyword">new</span> LinkedHashSet(SpringFactoriesLoader.loadFactoryNames(type, classLoader));</span><br><span class="line">        List&lt;T&gt; instances = <span class="keyword">this</span>.createSpringFactoriesInstances(type, parameterTypes, classLoader, args, names);</span><br><span class="line">        AnnotationAwareOrderComparator.sort(instances);</span><br><span class="line">        <span class="keyword">return</span> instances;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>进入到loadFactoryNames内所在的类，定义了配置文件的路径“META-INF/spring.factories”</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Log logger = LogFactory.getLog(SpringFactoriesLoader<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FACTORIES_RESOURCE_LOCATION = <span class="string">"META-INF/spring.factories"</span>;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SpringFactoriesLoader</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>Springboot通过启动加载 最终加载 META-INF/spring.factories 的所有文件，实现自动配。  </p>
-<h3 id="SpringBoot-的web开发"><a href="#SpringBoot-的web开发" class="headerlink" title="SpringBoot 的web开发"></a>SpringBoot 的web开发</h3><p>自动配置类：org.springframework.boot.autoConfig.web.WebMvcAutoConfiguration</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你对我的支持<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wxpay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/29/%E7%AC%AC%E5%85%AD%E4%BB%93%E5%BA%93/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/01/01/%E7%AC%AC%E4%B8%83%E4%BB%93%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          第七仓库 Oracle 那些词
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/12/26/%E7%AC%AC%E4%BA%94%E4%BB%93%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第五仓库 Springboot思想一</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Springboot-核心"><span class="toc-number">1.</span> <span class="toc-text">Springboot 核心</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注解"><span class="toc-number">1.1.</span> <span class="toc-text">注解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、-SpringbootApplication-注解"><span class="toc-number">1.1.1.</span> <span class="toc-text">1、@SpringbootApplication 注解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、EnableAutoConfiguration-注解"><span class="toc-number">1.1.2.</span> <span class="toc-text">2、EnableAutoConfiguration 注解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、ComponentSacn-注解"><span class="toc-number">1.1.3.</span> <span class="toc-text">3、ComponentSacn 注解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Springboot-自动配置"><span class="toc-number">2.</span> <span class="toc-text">Springboot 自动配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SpringBoot-的web开发"><span class="toc-number">3.</span> <span class="toc-text">SpringBoot 的web开发</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-
-	
-	<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80ODAxOC8yNDUxNQ==">
-<script type="text/javascript">
-    (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-
-        if (typeof LivereTower === 'function') { return; }
-
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-
-        e.parentNode.insertBefore(j, e);
-    })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-	
-
-  
-  
+    </div></section>
   
 
-  
-  <div id="SOHUCS" sid="第六仓库" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "true",
-        conf: "true"
-    });
-</script>
-</script>
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -445,8 +238,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
