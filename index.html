@@ -63,7 +63,7 @@
 		</nav>
 		
 		<nav>
-			总文章数 9
+			总文章数 10
 		</nav>
 		
 		<nav class="header-smart-menu">
@@ -159,6 +159,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-浅谈angularJS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/19/%E6%B5%85%E8%B0%88angularJS/">浅谈angularJS</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/01/19/%E6%B5%85%E8%B0%88angularJS/" class="archive-article-date">
+  	<time datetime="2020-01-19T07:47:00.447Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>近期因工作的需要，我简单的学习了一下angularJs，本期与大家分享一下angular1的使用方法和基础原理，本期介绍不包括angular环境搭建。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/19/%E6%B5%85%E8%B0%88angularJS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-浅谈Swagger" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -180,17 +244,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="浅谈Swegger"><a href="#浅谈Swegger" class="headerlink" title="浅谈Swegger"></a>浅谈Swegger</h3><p>本期跟大家分享一下Swegger，近期用到了Swegger工具，给我的感觉就是非常容易上手，之所以说是浅谈是因为我本身更多的是使用，没有太了解</p>
-<p>官网地址：<a href="https://swagger.io" target="_blank" rel="noopener">https://swagger.io</a><br>官网文档：<a href="https://swagger.io/docs" target="_blank" rel="noopener">https://swagger.io/docs</a></p>
-<p>基于Springboot项目集成swagger</p>
-<h4 id="1、在pom-xml文件中添加依赖-一个后台程序-一个ui"><a href="#1、在pom-xml文件中添加依赖-一个后台程序-一个ui" class="headerlink" title="1、在pom.xml文件中添加依赖 一个后台程序 一个ui"></a>1、在pom.xml文件中添加依赖 一个后台程序 一个ui</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">depandency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artfactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artfactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">depandency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2、配置类"><a href="#2、配置类" class="headerlink" title="2、配置类"></a>2、配置类</h4><p>创建一个config包，在其下创建一个swagger配置类，SwaggerConfig.java,如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger</span>2</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">createRestApi</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> </span><br><span class="line">        Docket (DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.ang()).parhs(PathSelectors.ang()).build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder().build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>配置完pom.xml和SwaggerConfig.java类之后，可以启动工程</p>
-<h4 id="3、页面测试"><a href="#3、页面测试" class="headerlink" title="3、页面测试"></a>3、页面测试</h4><p>工程启动完成后，在浏览器访问 <a href="http://localhost:8001/swagger-ui.html#/,我们就可以看到Swagger的接口文档页面了，还可以选择接口进行测试，" target="_blank" rel="noopener">http://localhost:8001/swagger-ui.html#/,我们就可以看到Swagger的接口文档页面了，还可以选择接口进行测试，</a></p>
-
+        <p>本期跟大家分享一下Swegger，近期用到了Swegger工具，给我的感觉就是非常容易上手，之所以说是浅谈是因为我本身更多的是使用，没有太了解</p>
+        
       
 
       
