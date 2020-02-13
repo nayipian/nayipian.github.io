@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>线程基础之二 | Gordo 戈多</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本期分享一下线程基础的第二期内容，有一部分内容是对第一期内容的补充，本期主要做已完善并且以实例的方式与大家分享">
+  <meta name="description" content="本期分享一下线程基础的第二期内容，有一部分内容是对第一期内容的补充，本期做部分完善并且以实例的方式与大家分享">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线程基础之二">
 <meta property="og:url" content="http://yoursite.com/2020/02/13/%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%BA%8C/index.html">
 <meta property="og:site_name" content="Gordo 戈多">
-<meta property="og:description" content="本期分享一下线程基础的第二期内容，有一部分内容是对第一期内容的补充，本期主要做已完善并且以实例的方式与大家分享">
+<meta property="og:description" content="本期分享一下线程基础的第二期内容，有一部分内容是对第一期内容的补充，本期做部分完善并且以实例的方式与大家分享">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-13T08:44:14.674Z">
-<meta property="article:modified_time" content="2020-02-13T08:43:20.000Z">
+<meta property="article:modified_time" content="2020-02-13T08:49:12.857Z">
 <meta property="article:author" content="捕猹少年">
 <meta name="twitter:card" content="summary">
   
@@ -187,7 +187,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本期分享一下线程基础的第二期内容，有一部分内容是对第一期内容的补充，本期主要做已完善并且以实例的方式与大家分享   </p>
+        <p>本期分享一下线程基础的第二期内容，有一部分内容是对第一期内容的补充，本期做部分完善并且以实例的方式与大家分享   </p>
 <a id="more"></a>
 <p>第一期中分享过线程的实现方法继承Thread类和实现Runnable的方式来实现，基础的线程安全同步可以使用synchronized来实现。  </p>
 <h4 id="1、synchronized关键字了解互斥锁：阅读以下程序"><a href="#1、synchronized关键字了解互斥锁：阅读以下程序" class="headerlink" title="1、synchronized关键字了解互斥锁：阅读以下程序"></a>1、synchronized关键字了解互斥锁：阅读以下程序</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count=<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> count1=<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">private</span> Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">m</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (obj) &#123;<span class="comment">//互斥锁</span></span><br><span class="line">            count--;</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">"count="</span>+count);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
