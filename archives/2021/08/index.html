@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>redis集群搭建 | Gordo 戈多</title>
+  <title>Archives: 2021/8 | Gordo 戈多</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本期介绍一下redis环境的搭建">
-<meta property="og:type" content="article">
-<meta property="og:title" content="redis集群搭建">
-<meta property="og:url" content="http://yoursite.com/2020/02/19/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Gordo 戈多">
+<meta property="og:url" content="http://yoursite.com/archives/2021/08/index.html">
 <meta property="og:site_name" content="Gordo 戈多">
-<meta property="og:description" content="本期介绍一下redis环境的搭建">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-19T03:45:54.260Z">
-<meta property="article:modified_time" content="2020-02-19T03:48:00.122Z">
 <meta property="article:author" content="捕猹少年">
 <meta name="twitter:card" content="summary">
   
@@ -36,7 +32,7 @@
 
   
 
-<meta name="generator" content="Hexo 4.1.1"></head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -67,7 +63,7 @@
 		</nav>
 		
 		<nav>
-			总文章数 14
+			总文章数 16
 		</nav>
 		
 		<nav class="header-smart-menu">
@@ -161,376 +157,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-redis集群搭建" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      redis集群搭建
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2021/08/20/%E7%AC%AC%E5%85%AB%E4%BB%93%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2021-08-20T14:49:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-20</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/08/20/%E7%AC%AC%E5%85%AB%E4%BB%93%E5%BA%93/">第八仓库</a>
     </h1>
   
 
-        
-        
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
+        <div class="article-info info-on-right">
+          
+          
 
-<a href="/2020/02/19/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-02-19T03:45:54.260Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本期介绍一下redis环境的搭建</p>
-<a id="more"></a>
-<h4 id="一、工具和镜像文件"><a href="#一、工具和镜像文件" class="headerlink" title="一、工具和镜像文件"></a>一、工具和镜像文件</h4><pre><code>本次使用虚拟机是VirtualBox，还可以使用vmware等虚拟机。  
-liunx镜像文件本次使用的是 CentOS-7-x86_64-DVD-1804.iso 版本，可以到CentOS的网站去下载；  
-xshell工具我这里选用的是Xmanager Enterprise 5的版本  
-redis镜像 可以从官网上选用最新的版本，我这里使用的是 Redis-x64-3.2.100  本次使用版本是 redis-5.0.7.tar.gz</code></pre><h4 id="二、前期准备"><a href="#二、前期准备" class="headerlink" title="二、前期准备"></a>二、前期准备</h4><pre><code>本机安装好虚拟机并且安装好linux，实现交互ping通互联网
-1、进入到虚拟机 cd 进入 /usr/local/ 在local下新建一个文件夹 software 在software下新建文件夹redis。
-2、上传redis镜像文件到 redis文件夹中 解压该文件 tar -xvf redis-5.0.7.tar.gz，完成后 该目录下会解压出一个文件夹  redis-5.0.7
-3、因为redis是用c语言进行编写的，所有机器上要使用gcc进行编译，进入到解压目录（redis-5.0.7）
-（1）、执行命令 yam install gcc 等待安装完毕
-（2）、执行命令 gcc -v 会看到如下代码，说明安装成功
-        [root@redis redis]# gcc -v
-        使用内建 specs。
-        COLLECT_GCC=gcc
-（3）、执行命令 make 等待编译redis
-    如果此时出现 jemalloc/jeamlloc.h 需要执行命令  make MALLOC = libc
-（4）、编译成功之后就可以来安装redis了，命令
-    # make install
-    首先需要这样的操作：进入到redis解压目录 ..redis-5.0.7/src/
-    a、执行命令 mkdir /home/bin 在home新建一个bin文件夹
-    b、将以下redis文件移动至 /home/bin 下
-        mv mkreleasehdr.sh redis-benchmark redis-check-aof redis-server redis-cli /home/bin/
-    c、执行命令 mkdir /home/etc 在home目录下新建一个etc文件夹
-    d、将文件移动到这文件夹
-        mv redis.conf /home/src/
-    e、vim修改 redis.conf 文件 将“daemonize no” 修改“daemonize yes” 这样修改的目的就是redis启动之后可以后台运行。
-（5）、启动redis
-    进入到home/bin目录 redis-server /home/bin/redis-config 控制台将会显示如下信息 Configuration loaded
-    -----------
-    2307:C 16 Feb 2020 10:47:14.810 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=2307, just started
-    2307:C 16 Feb 2020 10:47:14.810 # Configuration loaded
-    -----------
-    ps -ef|grep redis 查看进程
-    -----------
-    [root@redis bin]# ps -ef|grep redis
-    root      2222  1440  0 10:28 pts/0    00:00:00 mv -i redis-sentinel redis-server
-    root      2308     1  0 10:47 ?        00:00:00 redis-server 127.0.0.1:6379
-    root      2313  1440  0 10:47 pts/0    00:00:00 grep --color=auto redis
-    -----------
-    执行命令 redis-cli 进入redis环境
-
-    以上redis一台服务器搭建完成</code></pre><h4 id="三、集群搭建"><a href="#三、集群搭建" class="headerlink" title="三、集群搭建"></a>三、集群搭建</h4><pre><code>1、关闭防火墙
-（1）、查看防火墙 firewall-cmd --zone=public --list-ports
-    -----------
-    [root@redis bin]# firewall-cmd --zone=public --list-ports 
-
-    [root@redis bin]# 
-    -----------
-    此时防火墙正在运行
-    （2）、关闭防火墙 systemctl stop firewalld.service 
-    -----------
-    [root@redis bin]# systemctl stop firewalld.service 
-    [root@redis bin]# firewall-cmd --zone=public --list-ports 
-    FirewallD is not running
-    [root@redis bin]# 
-    -----------
-    此时提示信息“FirewallD is not running” 说明防护墙关闭
-2、集群模型
-    一个master主节点，两个从节点slave rds1和rds2
-    此时需要是各个机器之间可以通信。
-    三台机器同时进行 进入目录 cd /home/etc/ 完成后 新建文件夹 
-        mkdir redis
-        mkdir -p cluster
-    进行如下操作 还是在当前文件夹（/home/etc/），三台机器分别执行
-        第一台
-        mkdir -p 7001
-        mkdir -p 7004
-        复制redis-config 到 7001和7004
-        cp /home/etc/redis.config /home/redis/cluster/7001
-        cp /home/etc/redis.config /home/redis/cluster/7004
-
-        进入7001 ls查看文件 分别修改 vim redis.conf 配置
-        a、daemonize=yes 开启后台运行
-        b、port = 7001 运行端口
-        c、dir=/home/redis/cluster/7004/ redis文件存放位置
-        d、cluster-enabled=yes 是否开启集群模式
-        e、appendnoly=yes 持久化
-        f、protected-mode=no 保护模式
-        g、requirepass=zhyredis 密码
-        h、masterauth zhyredis 集群通信密码
-        i、cluster-config-file nodes-7001.conf
-        j、bind 注释
-
-        第二台
-        mkdir -p 7002
-        mkdir -p 7005
-        把第一台配置好的文件 抽取到本台虚拟机，命令：
-        scp root@192.168.0.80:/home/redis/cluster/7001/redis.conf /home/redis/cluster/7002
-        scp root@192.168.0.80:/home/redis/cluster/7001/redis.conf /home/redis/cluster/7005
-        依次对应修改先关的配置文件
-
-
-        第三台
-        mkdir -p 7003
-        mkdir -p 7006
-        把第一台配置好的文件 抽取到本台虚拟机，命令：
-        scp root@192.168.0.80:/home/redis/cluster/7001/redis.conf /home/redis/cluster/7003
-        scp root@192.168.0.80:/home/redis/cluster/7001/redis.conf /home/redis/cluster/7006
-        依次对应修改先关的配置文件
-
-    修改完成后，在主节点的上尝试启动两个端口
-
-    构建整个集群，搭建的时候是这样操作的：在任何一台机器上执行
-    命令： cd  /usr/local/bin
-    命令： ./redis-cli -a zhyredis --cluster  create 192.168.0.80:7001 192.168.0.80:7004 192.168.0.81:7002 192.168.0.81:7005 192.168.0.82:7003 192.168.0.82:7006  --cluster-replicas 1
-
-    执行完成显示以下显示情况
-    -------------------------------------------------------------
-    Master[0] -&gt; Slots 0 - 5460
-    Master[1] -&gt; Slots 5461 - 10922
-    Master[2] -&gt; Slots 10923 - 16383
-    Adding replica 192.168.0.81:7005 to 192.168.0.80:7001
-    Adding replica 192.168.0.82:7006 to 192.168.0.81:7002
-    Adding replica 192.168.0.80:7004 to 192.168.0.82:7003
-    M: 18eca664e00b60a73c3d2977d36500ae9cc9ab86 192.168.0.80:7001
-    slots:[0-5460] (5461 slots) master
-    S: 7578e23f089aa129cb07ad481b1722e795b71c77 192.168.0.80:7004
-    replicates 64d4e95451315bea3380655e62589a0d83f32af3
-    M: 4fb53d266ab79e287f025508de0848afbf83709c 192.168.0.81:7002
-    slots:[5461-10922] (5462 slots) master
-    S: 57aa5e275df71287e97e858b5247fe8414bdc3fa 192.168.0.81:7005
-    replicates 18eca664e00b60a73c3d2977d36500ae9cc9ab86
-    M: 64d4e95451315bea3380655e62589a0d83f32af3 192.168.0.82:7003
-    slots:[10923-16383] (5461 slots) master
-    S: e0d814b7173b046608329cc3b9dc22058fc7dbd1 192.168.0.82:7006
-    replicates 4fb53d266ab79e287f025508de0848afbf83709c
-    Can I set the above configuration? (type &apos;yes&apos; to accept): yes
-    &gt;&gt;&gt; Nodes configuration updated
-    &gt;&gt;&gt; Assign a different config epoch to each node
-    &gt;&gt;&gt; Sending CLUSTER MEET messages to join the cluster
-    Waiting for the cluster to join
-    ..
-    &gt;&gt;&gt; Performing Cluster Check (using node 192.168.0.80:7001)
-    M: 18eca664e00b60a73c3d2977d36500ae9cc9ab86 192.168.0.80:7001
-    slots:[0-5460] (5461 slots) master
-    1 additional replica(s)
-    M: 4fb53d266ab79e287f025508de0848afbf83709c 192.168.0.81:7002
-    slots:[5461-10922] (5462 slots) master
-    1 additional replica(s)
-    S: 57aa5e275df71287e97e858b5247fe8414bdc3fa 192.168.0.81:7005
-    slots: (0 slots) slave
-    replicates 18eca664e00b60a73c3d2977d36500ae9cc9ab86
-    S: 7578e23f089aa129cb07ad481b1722e795b71c77 192.168.0.80:7004
-    slots: (0 slots) slave
-    replicates 64d4e95451315bea3380655e62589a0d83f32af3
-    S: e0d814b7173b046608329cc3b9dc22058fc7dbd1 192.168.0.82:7006
-    slots: (0 slots) slave
-    replicates 4fb53d266ab79e287f025508de0848afbf83709c
-    M: 64d4e95451315bea3380655e62589a0d83f32af3 192.168.0.82:7003
-    slots:[10923-16383] (5461 slots) master
-    1 additional replica(s)
-    [OK] All nodes agree about slots configuration.
-    &gt;&gt;&gt; Check for open slots...
-    &gt;&gt;&gt; Check slots coverage...
-    -------------------------------------------------------------
-
-    进行集群连接</code></pre>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你对我的支持<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wxpay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/19/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/02/19/hadoop%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hadoop全分布式集群
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/02/13/%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">线程基础之二</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、工具和镜像文件"><span class="toc-number">1.</span> <span class="toc-text">一、工具和镜像文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、前期准备"><span class="toc-number">2.</span> <span class="toc-text">二、前期准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、集群搭建"><span class="toc-number">3.</span> <span class="toc-text">三、集群搭建</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-
-	
-	<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80ODAxOC8yNDUxNQ==">
-<script type="text/javascript">
-    (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-
-        if (typeof LivereTower === 'function') { return; }
-
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-
-        e.parentNode.insertBefore(j, e);
-    })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-	
-
-  
-  
+    </div></section>
   
 
-  
-  <div id="SOHUCS" sid="redis集群搭建" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "true",
-        conf: "true"
-    });
-</script>
-</script>
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -568,8 +238,8 @@ redis镜像 可以从官网上选用最新的版本，我这里使用的是 Redi
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

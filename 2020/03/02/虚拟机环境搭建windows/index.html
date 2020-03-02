@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>file | Gordo 戈多</title>
+  <title>虚拟机环境搭建windows | Gordo 戈多</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="file">
-<meta property="og:url" content="http://yoursite.com/file/index.html">
+  <meta name="description" content="本期介绍一下使用虚拟机安装windows系统的有关内容 介绍的主要原因就是近期使用VM VirtualBox搭建虚拟机，感觉VM VirtualBox还是很容易上手而且没有vmware那么重，更主要是免费的。下面介绍一下主要步骤和其他优点：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚拟机环境搭建windows">
+<meta property="og:url" content="http://yoursite.com/2020/03/02/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAwindows/index.html">
 <meta property="og:site_name" content="Gordo 戈多">
+<meta property="og:description" content="本期介绍一下使用虚拟机安装windows系统的有关内容 介绍的主要原因就是近期使用VM VirtualBox搭建虚拟机，感觉VM VirtualBox还是很容易上手而且没有vmware那么重，更主要是免费的。下面介绍一下主要步骤和其他优点：">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-22T10:34:03.000Z">
-<meta property="article:modified_time" content="2019-12-22T10:34:04.000Z">
+<meta property="article:published_time" content="2020-03-02T15:35:06.596Z">
+<meta property="article:modified_time" content="2020-03-02T15:34:05.073Z">
 <meta property="article:author" content="捕猹少年">
 <meta name="twitter:card" content="summary">
   
@@ -159,14 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-虚拟机环境搭建windows" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      file
+      虚拟机环境搭建windows
     </h1>
   
 
@@ -177,15 +179,27 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/file/index.html" class="archive-article-date">
-  	<time datetime="2019-12-22T10:34:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-22</time>
+<a href="/2020/03/02/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAwindows/" class="archive-article-date">
+  	<time datetime="2020-03-02T15:35:06.596Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>本期介绍一下使用虚拟机安装windows系统的有关内容</p>
+<p>介绍的主要原因就是近期使用VM VirtualBox搭建虚拟机，感觉VM VirtualBox还是很容易上手而且没有vmware那么重，更主要是免费的。下面介绍一下主要步骤和其他优点：</p>
+<a id="more"></a>
+<h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><pre><code>1、安装虚拟机Oracle VM VirtualBox，下载安装即可；
+2、下载windows镜像文件 可是使用MSDN （https://msdn.itellyou.cn/）选择操作系统，我选择了win7中文版和日本版；
+3、电脑配置：window7 i3 8G 500G，建议使用比较高配置的电脑。</code></pre><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre><code>1、新建一个虚拟机。在VirtualBox正常新建一个虚拟机，设置中选择下载的Windows镜像文件即可，启动默认安装。
+2、启动虚拟机，默认安装等待安装完成即可（快慢跟电脑配置有关）。
+3、安装完成之后需要重新的启动，等启动完成后需要进行Windows配置，配置完成后虚拟机上安装Windows的工作就完成了。</code></pre><h4 id="优化使用"><a href="#优化使用" class="headerlink" title="优化使用"></a>优化使用</h4><pre><code>VirtualBox可以设置全屏就是让虚拟机与我们的电脑屏幕一样大，这样会使我们使用起来更方便。主要的操作方法：
+1、Windows启动后需要调出几个常用的工具。window上右键选择 个性化 选择“更改桌面图标”将常用的计算机和网络勾选即可，确定关闭，页面上就会出现 计算机和网络的图标。
+2、优化虚拟机配置：选择VirtualBox菜单选择【设备】选择 安装增强功能，选择完成之后点击计算机，关注“有可移动存储的设备”等待出现VirtualBox Guest...,出现后点击进入，选择【VBoxWindowsAdditions】,如果有提示选择【是】，接下来选择【next】，这一步主要的作用是优化我们的系统。等待安装，完成之后重新启动windows虚拟机。
+3、调整windows画面比例：Windows重新启动之后，选择VirtualBox菜单选择【视图】选择 【全屏模式】，此时全屏模式就可以展现，完成后将虚拟的VirtualBox Guest...磁盘弹出。
+4、本机联动：实现虚拟机和本机的交互，需要在本地磁盘新建一个文件夹，回到择VirtualBox菜单选择【设备】选择【共享文件夹】此时需要新建一个磁盘，选择我们刚刚创建的文件夹，需要注意的是需要选择“挂载”和“分配”，完成之后重新启动，启动完成进入【计算机】在网络位置中就可以看到共享文件夹了。
+5、虚拟windows系统的激活：可以使用全激活，地址下载文件，https://www.lanzous.com/i4kb4od，以管理身份运行即可。说明一下，这个是一个绿色版的单机软件，如果非虚拟机的使用可能会默认是病毒。</code></pre>
       
 
       
@@ -269,7 +283,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/file/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/02/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAwindows/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,6 +295,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/08/20/%E7%AC%AC%E5%85%AB%E4%BB%93%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          第八仓库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/28/%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">线程基础之二</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -302,7 +335,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前期准备"><span class="toc-number">1.</span> <span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优化使用"><span class="toc-number">3.</span> <span class="toc-text">优化使用</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -340,7 +373,7 @@
   
 
   
-  <div id="SOHUCS" sid="" ></div> 
+  <div id="SOHUCS" sid="虚拟机环境搭建windows" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -391,7 +424,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
