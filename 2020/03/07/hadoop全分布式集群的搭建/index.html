@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hadoop全分布式集群 | Gordo 戈多</title>
+  <title>hadoop全分布式集群的搭建 | Gordo 戈多</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本期分享一下本机搭建hadoop全分布式集群的搭建方法">
+  <meta name="description" content="本期分享一下本机搭建hadoop全分布式集群的搭建方法 前期准备1、工具搭建之前需要准备好以下软件和工具：   （1）、虚拟机软件vmware或者Oracle VM VirtualBox;   （2）、镜像文件：liunx镜像文件,可以到官网下载（https:&#x2F;&#x2F;www.centos.org&#x2F;）;   （3）、jar文件：hadoop-2.7.3.tar.gz和jdk-8u91-linux-x64">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hadoop全分布式集群">
-<meta property="og:url" content="http://yoursite.com/2020/02/28/hadoop%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4/index.html">
+<meta property="og:title" content="hadoop全分布式集群的搭建">
+<meta property="og:url" content="http://yoursite.com/2020/03/07/hadoop%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4%E7%9A%84%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Gordo 戈多">
-<meta property="og:description" content="本期分享一下本机搭建hadoop全分布式集群的搭建方法">
+<meta property="og:description" content="本期分享一下本机搭建hadoop全分布式集群的搭建方法 前期准备1、工具搭建之前需要准备好以下软件和工具：   （1）、虚拟机软件vmware或者Oracle VM VirtualBox;   （2）、镜像文件：liunx镜像文件,可以到官网下载（https:&#x2F;&#x2F;www.centos.org&#x2F;）;   （3）、jar文件：hadoop-2.7.3.tar.gz和jdk-8u91-linux-x64">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-28T07:34:40.980Z">
-<meta property="article:modified_time" content="2020-02-19T03:46:56.000Z">
+<meta property="article:published_time" content="2020-03-07T02:45:25.510Z">
+<meta property="article:modified_time" content="2020-03-07T02:43:54.000Z">
 <meta property="article:author" content="捕猹少年">
 <meta name="twitter:card" content="summary">
   
@@ -161,14 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hadoop全分布式集群" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-hadoop全分布式集群的搭建" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      hadoop全分布式集群
+      hadoop全分布式集群的搭建
     </h1>
   
 
@@ -179,8 +179,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/02/28/hadoop%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4/" class="archive-article-date">
-  	<time datetime="2020-02-28T07:34:40.980Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
+<a href="/2020/03/07/hadoop%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4%E7%9A%84%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+  	<time datetime="2020-03-07T02:45:25.510Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
 </a>
         
       </header>
@@ -188,7 +188,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>本期分享一下本机搭建hadoop全分布式集群的搭建方法</p>
-<a id="more"></a>
 <h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><h4 id="1、工具"><a href="#1、工具" class="headerlink" title="1、工具"></a>1、工具</h4><pre><code>搭建之前需要准备好以下软件和工具：  
 （1）、虚拟机软件vmware或者Oracle VM VirtualBox;  
 （2）、镜像文件：liunx镜像文件,可以到官网下载（https://www.centos.org/）;  
@@ -269,7 +268,7 @@
 （10）、查看整个集群运行情况
     有两种方式：
     a、在主节点Master查看整个集群的情况：
-     命令 hdfs sfsadmin -report|more
+     命令 hdfs dfsadmin -report|more
     b、通过web查看集群运行情况：
       http://192.168.0.60:50070/
 
@@ -302,14 +301,41 @@
 
     配置完成后测试：
         ssh slave1 发现直接就可以登录不在提示输入密码，说明操作成功
-（12）、存储测试
+（12）、一键启动集群
+    在主节点上执行启动命令：start-all.sh  此时可以看到启动的日志。
+    执行命令：jps 可以查看每个集群是否已经启动，可以看如如下信息
+        启动验证：主机（Master主机）输入命令：jps ，查看控制台：
+            Jps
+            NameNode
+            SecondaryNameNode
+            ResourceManage
+        子节点（slave1） 输入命令：jps，查看控制台：
+            NodeManager
+            DataNode
+            Jps
+        子节点（slave2） 输入命令：jps，查看控制台：
+            DataNode
+            NodeManager
+            Jps
+（13）、一键停止集群
+    主节点执行命令：stop-all.sh 
+    日志：
+    Stopping namenodes on [Master]
+    Master: stopping namenode
+    slave1: stopping datanode
+    slave3: stopping datanode
+    slave2: stopping datanode
+    ·····    
+    之后通过jps命令查看集群情况
+
+（14）、存储测试
     进入到安装目录 cd /uer/local/software 
     执行命令进行存储：hadoop fs -put ./hadoop-2.7.3.tar.gz /
-    执行命令进行查看存储情况： hadoop fs -ls /
+    执行命令进行查看存储情况（根目录存储）： hadoop fs -ls /
     原理：命令执行的意义在于当执行完成后，hdfs系统知道要将该文件放置在系统内保存，先通知namenode这里有一个文件需要处理，收到通知后namenode分配资源往哪个datanode上放置，接下来将数据按照规定划分存储。
     此时浏览器中可以访问存储情况：
     在Utilitis中选择&quot;Browse the file system&quot; 点击存储文件可以看到文件所有的存储情况。
-（13）、设定文件备份情况
+（15）、设定文件备份情况
     hdfs系统中文件存储方式是将大文件转化为小文件存储，当文件传输过来之后文件首先需要进行分割，分割成每份128MB的形式进行存储,这是在一个datanode上进行的，hdfs默认将数据存储三份。
 
     修改hadoop的默认存储份数：文件路径hadoop的配置文件路径 ../etc/hadoop/
@@ -342,7 +368,7 @@
     这里需要说明：如果当集群运行的过程中出现宕机，数据备份将如何处理呢？
     当数据运行时，如果namenode宕机，整个集群就瘫痪停止运行。如果datanode宕机，hdfs的自身的轮询机制每个固定时间检测整个集群，如果发现datanode宕机，会将存储在该datanode上的数据重新分配资源进行备份，如果一旦数据的datanode重新启动，原来备份在机器的数据也不会消失依然存在。
 
-（14）、hadoop数据存储及java的访问
+（16）、hadoop数据存储及java的访问
     在默认情况下未作任何修改的时候文件默认存储在liunx的tmp文件下 cd /tmp
     tmp是liunx的数据存储的临时目录，liunx系统会不定时的对tmp目录进行清理，这就是会导致hadoop数据显示不正常，解决办法就是讲数据存储位置进行修改，修改方式如下：
 
@@ -361,12 +387,76 @@
     b、新建class类,以下代码：</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.URI;</span><br><span class="line"><span class="keyword">import</span> java.net.URISyntaxException;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.conf.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.FileSystem;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.FsUrlStreamHandlerFactory;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.Path;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.IOUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloHDFS</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, InterruptedException, URISyntaxException </span>&#123;</span><br><span class="line">        <span class="comment">//读取现在远程的文件</span></span><br><span class="line">        URL.setURLStreamHandlerFactory(<span class="keyword">new</span> FsUrlStreamHandlerFactory());</span><br><span class="line">        URL url = <span class="keyword">new</span> URL(<span class="string">"hdfs://192.168.0.60:9000/hello.txt"</span>);</span><br><span class="line">        InputStream in = url.openStream();</span><br><span class="line">        IOUtils.copyBytes(in, System.out,<span class="number">4096</span>,<span class="keyword">true</span>);</span><br><span class="line">        </span><br><span class="line">        Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">        conf.set(<span class="string">"fs.defaultFS"</span>, <span class="string">"hdfs://192.168.0.60:9000"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//远端新建文件夹</span></span><br><span class="line">        FileSystem fileSystem = FileSystem.get(<span class="keyword">new</span> URI(<span class="string">"hdfs://192.168.0.60:9000"</span>),conf,<span class="string">"root"</span>);</span><br><span class="line">        <span class="keyword">boolean</span> boo = fileSystem.mkdirs(<span class="keyword">new</span> Path(<span class="string">"/hadoopload"</span>));</span><br><span class="line">        System.out.println(boo);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//判断文件是否存在</span></span><br><span class="line">        boo = fileSystem.exists(<span class="keyword">new</span> Path(<span class="string">"/hello.txt"</span>));</span><br><span class="line">        System.out.println(boo);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//删除 参数如果是true真删除，默认不写为false</span></span><br><span class="line">        boo = fileSystem.delete(<span class="keyword">new</span> Path(<span class="string">"/hello.txt"</span>),<span class="keyword">true</span>);</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>上传文件 文件类型可以是word、excel、图片、视频等</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">import</span> java.io.IOException;</span><br><span class="line">    <span class="keyword">import</span> java.net.URI;</span><br><span class="line">    <span class="keyword">import</span> java.net.URISyntaxException;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">import</span> org.apache.hadoop.conf.Configuration;</span><br><span class="line">    <span class="keyword">import</span> org.apache.hadoop.fs.FileSystem;</span><br><span class="line">    <span class="keyword">import</span> org.apache.hadoop.fs.Path;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">upload</span> </span>&#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * 上传文件到hdfs上</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@throws</span> URISyntaxException </span></span><br><span class="line"><span class="comment">        * <span class="doctag">@throws</span> InterruptedException </span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, InterruptedException, URISyntaxException </span>&#123;</span><br><span class="line">            <span class="keyword">long</span> currentTimeMillis = System.currentTimeMillis();</span><br><span class="line">            Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">            <span class="comment">//java程序上传文件hadoop默认备份是3份 这个与hadoop服务器配置文件（hdfs-site.xml）不一致，需要手动自己配置</span></span><br><span class="line">            conf.set(<span class="string">"dfs.replication"</span>,<span class="number">2</span>);</span><br><span class="line">            <span class="comment">//hadoop远程地址和登录用户名</span></span><br><span class="line">            FileSystem fs = FileSystem.get(<span class="keyword">new</span> URI(<span class="string">"hdfs://192.168.0.60:9000"</span>),conf,<span class="string">"root"</span>);</span><br><span class="line">            fs.copyFromLocalFile(<span class="keyword">new</span> Path(<span class="string">"D:\\hadoop\\photo1.jpg"</span>), <span class="keyword">new</span> Path(<span class="string">"/"</span>));  </span><br><span class="line">            <span class="comment">//第一个为本地文件路径,第二个为hadoop路径</span></span><br><span class="line">            <span class="keyword">long</span> c = System.currentTimeMillis() - currentTimeMillis;</span><br><span class="line">            System.out.println(c);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//执行java文件此时可以查看到远程文件信息</span></span><br><span class="line"><span class="comment">//查看命令 hadoop fs -ls /</span></span><br><span class="line"><span class="comment">//删除命令 hadoop fs -rm -r 文件全名</span></span><br></pre></td></tr></table></figure>
 <pre><code>下载文件 远程文件下载到本地</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.net.URI;</span><br><span class="line"><span class="keyword">import</span> java.net.URISyntaxException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.conf.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.FileSystem;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.Path;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">download</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 将hdfs上文件下载到本地</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@throws</span> URISyntaxException </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@throws</span> InterruptedException </span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, InterruptedException, URISyntaxException </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> currentTimeMillis = System.currentTimeMillis();</span><br><span class="line">        Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">        FileSystem fs = FileSystem.get(<span class="keyword">new</span> URI(<span class="string">"hdfs://192.168.0.60:9000"</span>),conf,<span class="string">"root"</span>);</span><br><span class="line">        <span class="comment">//入参1 远程文件地址目录 入参2本地下载路径</span></span><br><span class="line">        fs.copyToLocalFile(<span class="keyword">new</span> Path(<span class="string">"/photo1.jpg"</span>), <span class="keyword">new</span> Path(<span class="string">"D:\\hadoop\\download"</span>)); </span><br><span class="line">        System.out.println(<span class="string">"成功"</span>);</span><br><span class="line">        <span class="keyword">long</span> c = System.currentTimeMillis() - currentTimeMillis;</span><br><span class="line">        System.out.println(c);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>到此为止hadoop的全部分布式模式搭建完成。</code></pre><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><pre><code>1、hadoop的逻辑组件
+<pre><code>到此为止hadoop的全部分布式模式搭建完成。
+
+补充几点：
+1、hadoop的逻辑组件
 （1）、hdfs 负责存储：主要分为namenode datanode 2thnode
 （2）、yarn 负责计算资源管理：
 （3）、MapReduce 负责计算：
 2、hdfs的主要结构分为物理结构和逻辑机构（分布式主从结构）
-3、hdfs的拓展方式增加一个datanode</code></pre>
+3、hdfs的拓展方式增加一个datanode
+4、hadoop存储模块默认128MB</code></pre><h3 id="hadoop云计算MapReduce引擎"><a href="#hadoop云计算MapReduce引擎" class="headerlink" title="hadoop云计算MapReduce引擎"></a>hadoop云计算MapReduce引擎</h3><pre><code>基本含义就是分布在多台机器同时计算，而且计算量庞大，在hadoop的集群中有以下几个重要概念
+hdfs：负责存储
+yarn：分布式的资源调动框架。资源调度引擎，查找空间，整个资源的调动和分配
+MapReduce：计算引擎
+
+1、yarn的分布式模型
+   首先yarn有一个主节点 叫做resourcemanager 多个从节点叫做nodeManager，搭建模型可分布搭建，为了节省硬件资源也可以混合部署。
+2、文件配置
+    在hadoop的安装目录找到这个文件yarn-site.xml vim打开（有几台机器配置几台）
+    （1）、yarn.resourcemanager.hostname 指明 resourcemanager 在 hadoop 的 Master节点上
+        &lt;configuration&gt;
+            &lt;property&gt;
+                    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+                    &lt;value&gt;Master&lt;/value&gt;
+            &lt;/property&gt;
+        &lt;/configuration&gt;
+    （2）、启动yarn集群命令 start-yarn.sh 
+        查看启动情况：
+        Master主节点 jps 会看到 ResourceManager
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@master hadoop]# jps</span><br><span class="line">28857 NameNode</span><br><span class="line">28297 Jps</span><br><span class="line">29066 SecondaryNameNode</span><br><span class="line">29226 ResourceManager</span><br></pre></td></tr></table></figure>
+            slaves从节点上 jps 会看到 NodeManager
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@slave1 ~]# jps</span><br><span class="line">28082 DataNode</span><br><span class="line">25748 NodeManager</span><br><span class="line">26027 Jps</span><br><span class="line">[root@slave1 ~]#</span><br></pre></td></tr></table></figure>
+        此时说明yarn成功启动。
+        ☆启动原理，前期搭建集群的时候已经在slaves文件中配置了集群之间的关系， 当告知resourcemanager以后，接下来回去读取slaves文件，进而启动整个配置。
+        观察yarn的环境情况可以通过浏览器查看：http://192.168.0.60:8088
+    （3）、停止yarn集群命令 stop-yarn.sh 
+
+    在hadoop的安装目录找到这个文件mapred-site.xml 
+    新安装的机器上可能存在一个mapred-site.xml.template 需要将这个文件cpoy一份mapred-site.xml，只有vim 打开mapred-site.xml
+    （1）、配置，配置的目的是告知集群MapReduce是在哪个集群上运行，value 指定是 yarn。具体配置如下：
+            &lt;configuration&gt;
+                &lt;property&gt;        
+                    &lt;name&gt;mapreduce.framework.name&lt;/name&gt;                   
+                    &lt;value&gt;yarn&lt;/value&gt; 
+                &lt;/property&gt;
+
+                &lt;property&gt;
+                    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+                    &lt;value&gt;mapreduce_shuffle&lt;/value&gt; 
+                &lt;/property&gt;
+            &lt;/configuration&gt;
+
+        进入到hadoop的安装目录，这个下边有hadoop的默认的示例程序，可以选择
+        find /usr/local/software/hadoop/ -name *example*.jar
+        -------------
+        /usr/local/software/hadoop/share/hadoop/mapreduce/sources/hadoop-mapreduce-examples-2.7.3-sources.jar
+        /usr/local/software/hadoop/share/hadoop/mapreduce/sources/hadoop-mapreduce-examples-2.7.3-test-sources.jar
+        /usr/local/software/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar
+        [root@master hadoop]# hadoop jar /usr/local/software/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar
+        -------------
+        运行命令：hadoop jar /usr/local/software/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar wordcount /hello.txt /output
+
+        此时在浏览器(http://192.168.0.60:8088)中可以看到计算时候的资源分配，执行结束之后没有出现异常表明执行成功
+        同样此时在hadoop的web页面，当执行完成只有也会看到相关的执行结果，此时出现了output文件夹，其下班出现了“_SUCCESS”  表示程序执行成功的提示
+        “part-r-00000” 也说明文件执行ID号
+
+        计算结果可以通过ID号执行命令 hadoop fs -text /output/part-r-00000 如下
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@master etc]# hadoop fs -text &#x2F;output&#x2F;part-r-00000</span><br><span class="line">beijing	1</span><br><span class="line">china	1</span><br><span class="line">hello	6</span><br><span class="line">jiangsu	1</span><br><span class="line">liaoning	1</span><br><span class="line">shanghai	1</span><br><span class="line">tokyo	1</span><br></pre></td></tr></table></figure>
+
+        hdfs中删除文件夹可以执行命令：  hdfs dfs -rm -r /文件夹名称
+        配置外网映射地址解决办法 https://blog.csdn.net/qq_35888719/article/details/87349791</code></pre>
       
 
       
@@ -450,7 +540,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/28/hadoop%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/07/hadoop%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4%E7%9A%84%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -464,18 +554,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/28/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          redis集群搭建
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/01/01/%E7%AC%AC%E4%B8%83%E4%BB%93%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第七仓库 Oracle 那些词</div>
+    <a href="/2020/03/04/docker%E7%9A%84linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">docker的linux环境搭建</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -502,7 +583,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前期准备"><span class="toc-number">1.</span> <span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、工具"><span class="toc-number">1.1.</span> <span class="toc-text">1、工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、虚拟机裸机环境"><span class="toc-number">1.2.</span> <span class="toc-text">2、虚拟机裸机环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全分布式环境搭建"><span class="toc-number">2.</span> <span class="toc-text">全分布式环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、hadoop集群的三种模式"><span class="toc-number">2.1.</span> <span class="toc-text">1、hadoop集群的三种模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、全分布式基本模式"><span class="toc-number">2.2.</span> <span class="toc-text">2、全分布式基本模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、搭建全分布式hadoop集群，步骤"><span class="toc-number">2.3.</span> <span class="toc-text">3、搭建全分布式hadoop集群，步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">3.</span> <span class="toc-text">其他</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前期准备"><span class="toc-number">1.</span> <span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、工具"><span class="toc-number">1.1.</span> <span class="toc-text">1、工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、虚拟机裸机环境"><span class="toc-number">1.2.</span> <span class="toc-text">2、虚拟机裸机环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全分布式环境搭建"><span class="toc-number">2.</span> <span class="toc-text">全分布式环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、hadoop集群的三种模式"><span class="toc-number">2.1.</span> <span class="toc-text">1、hadoop集群的三种模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、全分布式基本模式"><span class="toc-number">2.2.</span> <span class="toc-text">2、全分布式基本模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、搭建全分布式hadoop集群，步骤"><span class="toc-number">2.3.</span> <span class="toc-text">3、搭建全分布式hadoop集群，步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hadoop云计算MapReduce引擎"><span class="toc-number">3.</span> <span class="toc-text">hadoop云计算MapReduce引擎</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -540,7 +621,7 @@
   
 
   
-  <div id="SOHUCS" sid="hadoop全分布式集群" ></div> 
+  <div id="SOHUCS" sid="hadoop全分布式集群的搭建" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
