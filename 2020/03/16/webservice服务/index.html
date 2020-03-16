@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/2 | Gordo 戈多</title>
+  <title>webservice服务 | Gordo 戈多</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Gordo 戈多">
-<meta property="og:url" content="http://yoursite.com/archives/2020/02/index.html">
+  <meta name="description" content="本期介绍一下webservicewebservice从名字的来看是一种服务，这种服务可以实现系统间的数据通信，通过定义的标准和协议最终实现数据传输，这种标准和协议如同接口，因此通常称为“webservice接口”。比较官方的解释是“webservice是一种跨编程语言和跨操作系统的远程调用技术”。这样的好处是在大型系统中可免去系统重构，同时在多信息共享上可以实现数据类公共资源的复用，最终可以达到节">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webservice服务">
+<meta property="og:url" content="http://yoursite.com/2020/03/16/webservice%E6%9C%8D%E5%8A%A1/index.html">
 <meta property="og:site_name" content="Gordo 戈多">
+<meta property="og:description" content="本期介绍一下webservicewebservice从名字的来看是一种服务，这种服务可以实现系统间的数据通信，通过定义的标准和协议最终实现数据传输，这种标准和协议如同接口，因此通常称为“webservice接口”。比较官方的解释是“webservice是一种跨编程语言和跨操作系统的远程调用技术”。这样的好处是在大型系统中可免去系统重构，同时在多信息共享上可以实现数据类公共资源的复用，最终可以达到节">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/webservice/1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/webservice/2.png">
+<meta property="og:image" content="http://yoursite.com/images/webservice/3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/webservice/4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/webservice/5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/webservice/6.jpg">
+<meta property="og:image" content="http://yoursite.com/images/webservice/7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/webservice/8.png">
+<meta property="og:image" content="http://yoursite.com/images/webservice/9.jpg">
+<meta property="og:image" content="d:/blog/10.jpg">
+<meta property="article:published_time" content="2020-03-16T07:17:05.360Z">
+<meta property="article:modified_time" content="2020-03-16T07:25:13.852Z">
 <meta property="article:author" content="捕猹少年">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/webservice/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Gordo 戈多" type="application/atom+xml">
   
@@ -157,162 +172,255 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-webservice服务" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webservice服务
+    </h1>
+  
+
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/03/16/webservice%E6%9C%8D%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2020-03-16T07:17:05.360Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-16</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本期介绍一下webservice<br>webservice从名字的来看是一种服务，这种服务可以实现系统间的数据通信，通过定义的标准和协议最终实现数据传输，这种标准和协议如同接口，因此通常称为“webservice接口”。比较官方的解释是“webservice是一种跨编程语言和跨操作系统的远程调用技术”。<br>这样的好处是在大型系统中可免去系统重构，同时在多信息共享上可以实现数据类公共资源的复用，最终可以达到节省人力物力财力的目的。</p>
+<p>传统的webservice是通过Soap协议和xml实现数据传输，本期主要介绍的也是这种传统的传输方式。</p>
+<p>本期主要介绍如何搭建和使用Webservice，实现数据的传输和调用。</p>
+<a id="more"></a>
+<h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>主要工具Eclipse配置jdk1.8</p>
+<h4 id="搭建和调用"><a href="#搭建和调用" class="headerlink" title="搭建和调用"></a>搭建和调用</h4><h5 id="方式一：JDK"><a href="#方式一：JDK" class="headerlink" title="方式一：JDK"></a>方式一：JDK</h5><p>1、启动Eclipse，新建一个普通的java-project<br><img src="/images/webservice/1.jpg" alt=""><br>2、实现调用：<br>（1）、在工程的src下新建一个包 com.zh.webservice,在包下新建一个接口（interface）和一个实现类（Impl）<br>，这里需要强调一点实现类上需要一个 @WebService 注解，要将这个类标记为webservice接口。如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">WeatherService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">query</span><span class="params">(String cityName)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现</span></span><br><span class="line"><span class="meta">@WebService</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeatherServiceImpl</span> <span class="keyword">implements</span> <span class="title">WeatherService</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">query</span><span class="params">(String cityName)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"调用成功！"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"晴天"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）、创建一个webservice发布类，用来将服务发布，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    发布的方式是使用Endpoint.publish方法 两个参数一个是发布地址，一个webservice实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainJDK</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Endpoint.publish(<span class="string">"http://localhost:8080/weatherService"</span>, <span class="keyword">new</span> WeatherServiceImpl());</span><br><span class="line">        System.out.println(<span class="string">"接口已发布！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    发布接口：右键run，启动执行这个main方法,启动之后打印，此时会发现服务启动【红色标记】显示</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/webservice/2.png" alt=""><br>（3）、服务启动完成，在浏览器中输入服务地址“<a href="http://localhost:8080/weatherService”，需要注意的是这个时候会显示没有不到，后边要加上" target="_blank" rel="noopener">http://localhost:8080/weatherService”，需要注意的是这个时候会显示没有不到，后边要加上</a> ?wsdl 即为”<a href="http://localhost:8080/weatherService?wsdl&quot;" target="_blank" rel="noopener">http://localhost:8080/weatherService?wsdl&quot;</a> 这样会获得一个webservice的服务说明书。<br><img src="/images/webservice/3.jpg" alt=""><br>说明书中的关键节点： </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--对象--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">name</span>=<span class="string">"WeatherServiceImplService"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--实现类--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">binding</span> <span class="attr">name</span>=<span class="string">"WeatherServiceImplPortBinding"</span> <span class="attr">type</span>=<span class="string">"tns:WeatherServiceImpl"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--方法--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">operation</span> <span class="attr">name</span>=<span class="string">"query"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>（4）、服务访问。通过wsimport命令生成客户端代码（cmd进入到当前的src路径下），wsimport.exe命令是在jdk的bin目录下，要指定生成客户端代码所在的包 实现方式如下：<br>    第一种方式：【远程地址】 wsimport -s.<a href="http://127.0.0.1:8080/weather?wsdl" target="_blank" rel="noopener">http://127.0.0.1:8080/weather?wsdl</a><br>    第二种方式：【XML文件】 wsimport -s. 文件路径（文件路径后边不需要加 ?wsdl）<br>具体实现方法:工程属性找到src所在文件的目录地址复制，cmd进入到目录下 输入 wsimport 可以看到相关说明。最终执行如下：<br><img src="/images/webservice/4.jpg" alt=""><br>F:\programmer\workspaces\Designpattern\webservice_client01\src&gt;wsimport -s . <a href="http://localhost:8080/weatherService?wsdl" target="_blank" rel="noopener">http://localhost:8080/weatherService?wsdl</a><br><img src="/images/webservice/5.jpg" alt=""><br>执行完成之后可以在工程目录下看到自动生成的webservice相关文件，创建实现类，调用服务<br><img src="/images/webservice/6.jpg" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现方式一</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//(1)、创建服务视图对象</span></span><br><span class="line">        WeatherServiceImplService weatherService = <span class="keyword">new</span> WeatherServiceImplService();</span><br><span class="line">        <span class="comment">//(2)、获取服务的实现类</span></span><br><span class="line">        WeatherServiceImpl port = weatherService.getPort(WeatherServiceImpl<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        <span class="comment">//(3)、调用方法</span></span><br><span class="line">        String query = port.query(<span class="string">"大连"</span>);</span><br><span class="line">        System.out.println(query);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现方式二</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Clinet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> MalformedURLException </span>&#123;</span><br><span class="line">        URL url = <span class="keyword">new</span> URL(<span class="string">"http://localhost:8080/weatherService?wsdl"</span>);</span><br><span class="line">        QName qName = <span class="keyword">new</span> QName(<span class="string">"http://webservice.zh.com/"</span>, <span class="string">"WeatherServiceImplService"</span>);</span><br><span class="line">        Service service = Service.create(url, qName);</span><br><span class="line">        WeatherServiceImpl serviceImpl = service.getPort(WeatherServiceImpl<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        String weather = serviceImpl.query(<span class="string">"北京"</span>);</span><br><span class="line">        System.out.println(weather);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（5）、访问网络提供的webservice服务<br>目前网络上有开放的webservice测试地址 这里以<a href="http://www.webxml.com.cn/zh_cn/web_services.aspx为例。" target="_blank" rel="noopener">http://www.webxml.com.cn/zh_cn/web_services.aspx为例。</a><br>同样需要创建一个类，使用cmd生成对应的方法。实现调用方法，一查询电话号码归属地为例，编写调用代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//(1)、创建服务视图</span></span><br><span class="line">	MobileCodeWS service = <span class="keyword">new</span> MobileCodeWS();</span><br><span class="line">	<span class="comment">//(2)、根据服务视图创建实现类对象</span></span><br><span class="line">	MobileCodeWSSoap codeWSSoap = service.getPort(MobileCodeWSSoap<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">	<span class="comment">//(3)、调用方法</span></span><br><span class="line">	String addressinfo = codeWSSoap.getMobileCodeInfo(<span class="string">"18988888888"</span>, <span class="keyword">null</span>);</span><br><span class="line">	System.out.println(addressinfo);</span><br><span class="line">&#125;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">       显示：18988888888：广东 广州 广东电信CDMA卡</span></span><br><span class="line"><span class="comment">   */</span></span><br></pre></td></tr></table></figure>
+<p>通过两个方式的比较可以，webservic的关键是读懂wsdl文件。</p>
+<p>在此基础上，再举一个例子，获取天气预报信息。在运行执行cmd的过程中会发现出现异常。<br><img src="/images/webservice/7.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">正在解析 WSDL...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[WARNING] src-resolve.4.2: 解析组件 &#39;s:schema&#39; 时出错。在该组件中检测到 &#39;s:schema&#39; 位于名称空间 &#39;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema&#39; 中, 但无法从方案文档 &#39;http:&#x2F;&#x2F;ws.webxml.com.cn&#x2F;WebServices&#x2F;WeatherWS.asmx?wsdl#types?schema1&#39; 引用此名称空间的组件。如果这是不正确的名称空间, 则很可能需要更改 &#39;s:schema&#39; 的前缀。如果这是正确的名称空间, 则应将适当的 &#39;import&#39; 标记添加到 &#39;http:&#x2F;&#x2F;ws.webxml.com.cn&#x2F;WebServices&#x2F;WeatherWS.asmx?wsdl#types?schema1&#39;。</span><br><span class="line">http:&#x2F;&#x2F;ws.webxml.com.cn&#x2F;WebServices&#x2F;WeatherWS.asmx?wsdl#types?schema1的第 15 行</span><br><span class="line"></span><br><span class="line">[WARNING] src-resolve: 无法将名称 &#39;s:schema&#39; 解析为 &#39;element declaration&#39; 组件。</span><br><span class="line">http:&#x2F;&#x2F;ws.webxml.com.cn&#x2F;WebServices&#x2F;WeatherWS.asmx?wsdl#types?schema1的第 15 行</span><br><span class="line"></span><br><span class="line">[ERROR] undefined element declaration &#39;s:schema&#39;</span><br><span class="line">http:&#x2F;&#x2F;ws.webxml.com.cn&#x2F;WebServices&#x2F;WeatherWS.asmx?wsdl的第 15 行</span><br><span class="line"></span><br><span class="line">[ERROR] undefined element declaration &#39;s:schema&#39;</span><br><span class="line">http:&#x2F;&#x2F;ws.webxml.com.cn&#x2F;WebServices&#x2F;WeatherWS.asmx?wsdl的第 61 行</span><br><span class="line"></span><br><span class="line">[ERROR] undefined element declaration &#39;s:schema&#39;</span><br><span class="line">http:&#x2F;&#x2F;ws.webxml.com.cn&#x2F;WebServices&#x2F;WeatherWS.asmx?wsdl的第 101 行</span><br><span class="line"></span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
+<p>关于创建失败的问题，解决办法是将内容修改，网页版需要查看网页源代码的方式，复制之后在本地工程上创建一个以.wsdl结尾的文件，将代码放到这个文件中，意为创建本地文件，最终目的是基于本地文件生成客户端代码。将文件中的&lt;s:element ref=”s:schema” /&gt;删除，将&lt;s:any&gt;内容修改成&lt;s:any minOccurs=”2” maxOccurs=”2”/&gt;，如果第一行是空行也需要去掉空行。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 . <span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		WeatherWS service = <span class="keyword">new</span> WeatherWS();</span><br><span class="line">		</span><br><span class="line">		WeatherWSSoap soap = service.getPort(WeatherWSSoap<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"><span class="comment">//		List&lt;String&gt; xmlinfo = soap.getSupportCityString("美国").getString();</span></span><br><span class="line">		List&lt;String&gt; xmlinfo = soap.getWeather(<span class="string">"北京"</span>, <span class="keyword">null</span>).getString();</span><br><span class="line">		<span class="keyword">for</span>(String s:xmlinfo)&#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">        显示console：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        直辖市 北京</span></span><br><span class="line"><span class="comment">        北京</span></span><br><span class="line"><span class="comment">        792</span></span><br><span class="line"><span class="comment">        2020/03/15 10:30:23</span></span><br><span class="line"><span class="comment">        今日天气实况：气温：15℃；风向/风力：北风 2级；湿度：20%</span></span><br><span class="line"><span class="comment">        紫外线强度：强。空气质量：中。</span></span><br><span class="line"><span class="comment">        紫外线指数：强，涂擦SPF大于15、PA+防晒护肤品。</span></span><br><span class="line"><span class="comment">        健臻·血糖指数：不易波动，天气条件好，血糖不易波动，可适时进行户外锻炼。</span></span><br><span class="line"><span class="comment">        穿衣指数：较冷，建议着厚外套加毛衣等服装。</span></span><br><span class="line"><span class="comment">        洗车指数：适宜，天气较好，适合擦洗汽车。</span></span><br><span class="line"><span class="comment">        空气污染指数：中，易感人群应适当减少室外活动。</span></span><br><span class="line"><span class="comment">    */</span></span><br></pre></td></tr></table></figure>
+<p>可以发现soap方法中存在很多的查看方法，通过城市名称、国家名称、城市名称查询 等<br><img src="/images/webservice/8.png" alt=""></p>
+<h5 id="方式二：soap协议"><a href="#方式二：soap协议" class="headerlink" title="方式二：soap协议"></a>方式二：soap协议</h5><p>（1）、通过手工的方式创建一个符合soap协议的数据信息。<br>目标是不产生客户端代码。<br>要领：<br>首先需要观察xml的形式，tcp/Ip协议 监控工具，其次是数据的组装配装符合条件的xml。<br>配置：<br>需要创建一个工程使用Eclipse自带的通信工具，找到window 属性，搜索一下tcp，会显示TCP/IP Monitor,选择【add】配置以下几项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">对外监听端口</span><br><span class="line">local monitoring port:8000  </span><br><span class="line">监听服务名</span><br><span class="line">Host name:localhost</span><br><span class="line">端口号</span><br><span class="line">port:8080</span><br><span class="line">类型</span><br><span class="line">type:tcp&#x2F;ip</span><br></pre></td></tr></table></figure>
+<p><img src="/images/webservice/9.jpg" alt=""><br>配置完成选择【ok】，点击【start】启动服务 点击【ok】<br>启动服务发请求<br><img src="D:/blog/10.jpg" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 通过观察数据格式，手动发送请求，步骤：</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">     <span class="comment">//1、URL</span></span><br><span class="line">     URL url =  <span class="keyword">new</span> URL(<span class="string">"http://localhost:8000/weatherService"</span>);</span><br><span class="line">     <span class="comment">//2、创建一个向服务器发送消息的对象，获取服务器的访问信息</span></span><br><span class="line">     HttpURLConnection connection = (HttpURLConnection) url.openConnection();</span><br><span class="line">     <span class="comment">//3、设置请求方法 这个也是协议</span></span><br><span class="line">     connection.setRequestMethod(<span class="string">"POST"</span>);</span><br><span class="line">     connection.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"text/xml; charset=utf-8"</span>);</span><br><span class="line">     <span class="comment">//4、打开通信</span></span><br><span class="line">     connection.setDoOutput(<span class="keyword">true</span>);</span><br><span class="line">     connection.setDoInput(<span class="keyword">true</span>);</span><br><span class="line">     <span class="comment">//5、发送请求信息</span></span><br><span class="line">     <span class="comment">//拼接符合要求的数据格式</span></span><br><span class="line">     String info =  buildXML(<span class="string">"北京"</span>);</span><br><span class="line">     connection.getOutputStream().write(info.getBytes());</span><br><span class="line">     <span class="comment">//6、发送请求消息</span></span><br><span class="line">     <span class="comment">//7、获取响应消息</span></span><br><span class="line">     <span class="keyword">int</span> code = connection.getResponseCode();<span class="comment">//响应码</span></span><br><span class="line">     <span class="keyword">if</span>(code==<span class="number">200</span>)&#123;<span class="comment">//成功</span></span><br><span class="line">         <span class="comment">//成功后获取返回值信息</span></span><br><span class="line">         InputStream inputStream = connection.getInputStream();</span><br><span class="line">         <span class="comment">//</span></span><br><span class="line">         Scanner inScanner = <span class="keyword">new</span> Scanner(inputStream);</span><br><span class="line">         <span class="keyword">while</span> (inScanner.hasNext()) &#123;</span><br><span class="line">             System.out.println(inScanner.nextLine());</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         System.out.println(code);</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">buildXML</span><span class="params">(String cityname)</span></span>&#123;</span><br><span class="line">     </span><br><span class="line">     StringBuilder builder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">     builder.append(<span class="string">"&lt;?xml version=\"1.0\" ?&gt;"</span>);</span><br><span class="line">     builder.append(<span class="string">"&lt;S:Envelope xmlns:S=\"http://schemas.xmlsoap.org/soap/envelope/\"&gt;"</span>);</span><br><span class="line">     builder.append(<span class="string">"&lt;S:Body&gt;&lt;ns2:query xmlns:ns2=\"http://webservice.zh.com/\"&gt;"</span>);</span><br><span class="line">     builder.append(<span class="string">"&lt;arg0&gt;"</span>);</span><br><span class="line">     builder.append(cityname);</span><br><span class="line">     builder.append(<span class="string">"&lt;/arg0&gt;"</span>);</span><br><span class="line">     builder.append(<span class="string">"&lt;/ns2:query&gt;"</span>);</span><br><span class="line">     builder.append(<span class="string">"&lt;/S:Body&gt;"</span>);</span><br><span class="line">     builder.append(<span class="string">"&lt;/S:Envelope&gt;"</span>);</span><br><span class="line">     </span><br><span class="line">     <span class="keyword">return</span> builder.toString();</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 显示结果：</span></span><br><span class="line"><span class="comment"> * &lt;?xml version="1.0" ?&gt;&lt;S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"&gt;</span></span><br><span class="line"><span class="comment"> *	  &lt;S:Body&gt;&lt;ns2:queryResponse xmlns:ns2="http://webservice.zh.com/"&gt;</span></span><br><span class="line"><span class="comment"> *		  &lt;return&gt;晴天&lt;/return&gt;</span></span><br><span class="line"><span class="comment"> *		  &lt;/ns2:queryResponse&gt;</span></span><br><span class="line"><span class="comment"> *	  &lt;/S:Body&gt;</span></span><br><span class="line"><span class="comment"> * &lt;/S:Envelope&gt;</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h4 id="通过注解规范发布接口"><a href="#通过注解规范发布接口" class="headerlink" title="通过注解规范发布接口"></a>通过注解规范发布接口</h4><p>涉及的先关注解:<br>        1、@WebService<br>        2、@WebMethod<br>        3、@WebResult<br>        4、@WebParam<br>引入注解这些的主要目的除了标记webservice服务以外，还可以让操作文档看起来整洁干净。<br>配置@WebParam会让该文档的arg0取消 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">query</span><span class="params">(@WebParam(name=<span class="string">"cityName"</span>)</span>String cityName) </span>&#123;</span><br><span class="line">	System.out.println(<span class="string">"查询 "</span>+ cityName);</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"晴天"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>配置@WebMethod可以设置方法的显示和隐藏方法 @WebMethod(exclude=true)默认false   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebService</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeatherServiceImpl</span> <span class="keyword">implements</span> <span class="title">WeatherService</span></span>&#123; </span><br><span class="line">    <span class="comment">//不提供对外调用 </span></span><br><span class="line">    <span class="meta">@WebMethod</span>(exclude=<span class="keyword">true</span>)</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">noPublic</span><span class="params">(String cityName)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"查询 "</span>+ cityName);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"大雪"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>xml配置文件可以看到没有noPublic提供使用</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xs:schema</span> <span class="attr">xmlns:tns</span>=<span class="string">"http://webservice.zh.com/"</span> <span class="attr">xmlns:xs</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span> <span class="attr">version</span>=<span class="string">"1.0"</span> <span class="attr">targetNamespace</span>=<span class="string">"http://webservice.zh.com/"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"query"</span> <span class="attr">type</span>=<span class="string">"tns:query"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"queryResponse"</span> <span class="attr">type</span>=<span class="string">"tns:queryResponse"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"query"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"cityName"</span> <span class="attr">type</span>=<span class="string">"xs:string"</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"queryResponse"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"return"</span> <span class="attr">type</span>=<span class="string">"xs:string"</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:schema</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>配置@WebService注解，除了标记为webservice服务以外，还可以实现@WebMethod类似的功能，隐藏不提供的服务，对比如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//未设置前增加一个接口 AreaWeather 以及xml 显示</span></span><br><span class="line"><span class="meta">@WebService</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeatherServiceImpl</span> <span class="keyword">implements</span> <span class="title">WeatherService</span>,<span class="title">OtherWebservice</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">query</span><span class="params">(@WebParam(name=<span class="string">"cityName"</span>)</span>String cityName) </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"查询 "</span>+ cityName);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"晴天"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@WebMethod</span>(exclude=<span class="keyword">true</span>)</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">noPublic</span><span class="params">(String cityName)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"查询 "</span>+ cityName);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"大雪"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">AreaWeather</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xs:schema</span> <span class="attr">xmlns:tns</span>=<span class="string">"http://webservice.zh.com/"</span> <span class="attr">xmlns:xs</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span> <span class="attr">version</span>=<span class="string">"1.0"</span> <span class="attr">targetNamespace</span>=<span class="string">"http://webservice.zh.com/"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"AreaWeather"</span> <span class="attr">type</span>=<span class="string">"tns:AreaWeather"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"AreaWeatherResponse"</span> <span class="attr">type</span>=<span class="string">"tns:AreaWeatherResponse"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"query"</span> <span class="attr">type</span>=<span class="string">"tns:query"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"queryResponse"</span> <span class="attr">type</span>=<span class="string">"tns:queryResponse"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"query"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"cityName"</span> <span class="attr">type</span>=<span class="string">"xs:string"</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"queryResponse"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"return"</span> <span class="attr">type</span>=<span class="string">"xs:string"</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"AreaWeather"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"AreaWeatherResponse"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"return"</span> <span class="attr">type</span>=<span class="string">"xs:string"</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:schema</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不显示WeatherService的接口信息</span></span><br><span class="line"><span class="meta">@WebService</span>(endpointInterface=<span class="string">"com.zh.webservice.OtherWebservice"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeatherServiceImpl</span> <span class="keyword">implements</span> <span class="title">WeatherService</span>,<span class="title">OtherWebservice</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">query</span><span class="params">(@WebParam(name=<span class="string">"cityName"</span>)</span>String cityName) </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"查询 "</span>+ cityName);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"晴天"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@WebMethod</span>(exclude=<span class="keyword">true</span>)</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">noPublic</span><span class="params">(String cityName)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"查询 "</span>+ cityName);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"大雪"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">AreaWeather</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xs:schema</span> <span class="attr">xmlns:tns</span>=<span class="string">"http://webservice.zh.com/"</span> <span class="attr">xmlns:xs</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span> <span class="attr">version</span>=<span class="string">"1.0"</span> <span class="attr">targetNamespace</span>=<span class="string">"http://webservice.zh.com/"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"AreaWeather"</span> <span class="attr">type</span>=<span class="string">"tns:AreaWeather"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"AreaWeatherResponse"</span> <span class="attr">type</span>=<span class="string">"tns:AreaWeatherResponse"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"AreaWeather"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span> <span class="attr">name</span>=<span class="string">"AreaWeatherResponse"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">"return"</span> <span class="attr">type</span>=<span class="string">"xs:string"</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:schema</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>经过测试WebService 注解会将 之前的WebMethod配置会抵消。</p>
+<p>本期介绍到这里，下期继续webservice。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你对我的支持<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wxpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/28/%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%BA%8C/" class="archive-article-date">
-  	<time datetime="2020-02-28T07:34:40.990Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/28/%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%BA%8C/">线程基础之二</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/16/webservice%E6%9C%8D%E5%8A%A1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/28/%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%B8%80/" class="archive-article-date">
-  	<time datetime="2020-02-28T07:34:40.989Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/16/webservice_CXF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webservice_CXF</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/28/%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%B8%80/">线程基础之一</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备"><span class="toc-number">1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#搭建和调用"><span class="toc-number">2.</span> <span class="toc-text">搭建和调用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#方式一：JDK"><span class="toc-number">2.1.</span> <span class="toc-text">方式一：JDK</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#方式二：soap协议"><span class="toc-number">2.2.</span> <span class="toc-text">方式二：soap协议</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过注解规范发布接口"><span class="toc-number">3.</span> <span class="toc-text">通过注解规范发布接口</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
+
+	
+	<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80ODAxOC8yNDUxNQ==">
+<script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+	
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/28/%E6%B5%85%E8%B0%88Swagger/" class="archive-article-date">
-  	<time datetime="2020-02-28T07:34:40.984Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/28/%E6%B5%85%E8%B0%88Swagger/">浅谈Swagger</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/28/%E6%B5%85%E8%B0%88angularJS/" class="archive-article-date">
-  	<time datetime="2020-02-28T07:34:40.983Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/28/%E6%B5%85%E8%B0%88angularJS/">浅谈angularJS</a>
-    </h1>
+  <div id="SOHUCS" sid="webservice服务" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/28/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-02-28T07:34:40.981Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/28/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/">redis集群搭建</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -350,8 +458,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
