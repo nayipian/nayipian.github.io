@@ -16,7 +16,7 @@
 <meta property="og:description" content="本期针对LinkedList涉及到先关问题进行整理，通过与ArrayList的比较说明进行一些阐述。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-26T07:27:23.591Z">
-<meta property="article:modified_time" content="2020-04-26T07:43:57.779Z">
+<meta property="article:modified_time" content="2020-04-26T10:02:38.756Z">
 <meta property="article:author" content="捕猹少年">
 <meta name="twitter:card" content="summary">
   
@@ -193,7 +193,7 @@
 <h2 id="ArrayList和LinkedList的比较"><a href="#ArrayList和LinkedList的比较" class="headerlink" title="ArrayList和LinkedList的比较"></a>ArrayList和LinkedList的比较</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>ArrayList是在集合体系中最开始接触的集合，也是在实际开发中出镜频率比较高的集合。基本模式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
 
-<p>ArrayList底层是现实是数组，既然是数组，那么很多情况与ArrayList与数组关系很密切。对于数组来说其特点之一就是在初始化的时候需要指定其长度，作为对数组的升级版，ArrayList不需要在初始化在定义长度，而是实现了动态数组长度的变化。<br>对此提出疑问ArrayList是如何实现动态数组长度的变化？<br>基本原理是：ArrayList当它在调用add()方法的时候，首先做的是判断当前数组是否还可以放下要添加的数据，如果可以放下，就会将该数组元素放在上一个数据的后边；如果放不下，ArrayList将会新开辟一个数组，同时将原数组中的数据copy到新数组中同时在将新的数据放在新copy的数据后边。</p>
+<p>ArrayList底层是现实是数组，既然是数组，那么很多情况ArrayList与数组关系很密切。对于数组来说其特点之一就是在初始化的时候需要指定其长度，作为对数组的升级版，ArrayList不需要在初始化在定义长度，而是实现了动态数组长度的变化。<br>对此提出疑问ArrayList是如何实现动态数组长度的变化？<br>基本原理是：ArrayList当它在调用add()方法的时候，首先做的是判断当前数组是否还可以放下要添加的数据，如果可以放下，就会将该数组元素放在上一个数据的后边；如果放不下，ArrayList将会新开辟一个数组，同时将原数组中的数据copy到新数组中同时在将新的数据放在新copy的数据后边。</p>
 <p>ArrayList的特点：查询快，增删慢，消耗内存。<br>（1）查询快：因为数组的查询是根据“索引”角标进行的检索，因此查询的速度比较快。<br>（2）增删慢：主要的原因也是因为数组和Arraylist的特性造成的，首先但add值的时候需要计算出指定位置，并且将指定位置的值一次向后移动，当remove值的时候，删除之后后边的值需要往前移动一位，当集合内的数据，也就是说size的值过大的时候就会是效率变得非常的底。<br>（3）消耗内存：当针对一个ArrayList频繁的进行add操作的时候，底层数组的实现方式是将原数组copy再在后边添加一个新的元素，当创建数据处理完成之后原数组就被是为存储的垃圾会被jvm回收，并且每次复制新数组都会在原数组的基础之上扩容都1.5倍，扩容的部分如果数据放不满就会被空限制，因此频繁的对Arraylist进行add操作系统内存的消耗是比较大的。</p>
 <h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p>1、LinkedList集合是链表是集合，主要分为：单链表、双链表和循环链表。主要模式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LinkedList list = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
