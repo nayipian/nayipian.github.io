@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>file | Gordo 戈多</title>
+  <title>LinkedList | Gordo 戈多</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="file">
-<meta property="og:url" content="http://yoursite.com/file/index.html">
+  <meta name="description" content="LinkedList和ArrayList本期针对LinkedList涉及到先关问题进行整理，通过与ArrayList的比较说明进行一些阐述。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LinkedList">
+<meta property="og:url" content="http://yoursite.com/2020/04/26/LinkedList/index.html">
 <meta property="og:site_name" content="Gordo 戈多">
+<meta property="og:description" content="LinkedList和ArrayList本期针对LinkedList涉及到先关问题进行整理，通过与ArrayList的比较说明进行一些阐述。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-22T10:34:03.000Z">
-<meta property="article:modified_time" content="2019-12-22T10:34:04.000Z">
+<meta property="article:published_time" content="2020-04-26T07:27:23.591Z">
+<meta property="article:modified_time" content="2020-04-26T07:22:38.000Z">
 <meta property="article:author" content="捕猹少年">
 <meta name="twitter:card" content="summary">
   
@@ -159,14 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-LinkedList" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      file
+      LinkedList
     </h1>
   
 
@@ -177,15 +179,37 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/file/index.html" class="archive-article-date">
-  	<time datetime="2019-12-22T10:34:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-22</time>
+<a href="/2020/04/26/LinkedList/" class="archive-article-date">
+  	<time datetime="2020-04-26T07:27:23.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="LinkedList和ArrayList"><a href="#LinkedList和ArrayList" class="headerlink" title="LinkedList和ArrayList"></a>LinkedList和ArrayList</h2><p>本期针对LinkedList涉及到先关问题进行整理，通过与ArrayList的比较说明进行一些阐述。</p>
+<a id="more"></a>
+
+<h2 id="ArrayList和LinkedList的比较"><a href="#ArrayList和LinkedList的比较" class="headerlink" title="ArrayList和LinkedList的比较"></a>ArrayList和LinkedList的比较</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>ArrayList是在集合体系中最开始接触的集合，也是在实际开发中出镜频率比较高的集合。基本模式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<p>ArrayList底层是现实是数组，既然是数组，那么很多情况与ArrayList与数组关系很密切。对于数组来说其特点之一就是在初始化的时候需要指定其长度，作为对数组的升级版，ArrayList不需要在初始化在定义长度，而是实现了动态数组长度的变化。<br>对此提出疑问ArrayList是如何实现动态数组长度的变化？<br>基本原理是：ArrayList当它在调用add()方法的时候，首先做的是判断当前数组是否还可以放下要添加的数据，如果可以放下，就会将该数组元素放在上一个数据的后边；如果放不下，ArrayList将会新开辟一个数组，同时将原数组中的数据copy到新数组中同时在将新的数据放在新copy的数据后边。</p>
+<p>ArrayList的特点：查询快，增删慢，消耗内存。<br>（1）查询快：因为数组的查询是根据“索引”角标进行的检索，因此查询的速度比较快。<br>（2）增删慢：主要的原因也是因为数组和Arraylist的特性造成的，首先但add值的时候需要计算出指定位置，并且将指定位置的值一次向后移动，当remove值的时候，删除之后后边的值需要往前移动一位，当集合内的数据，也就是说size的值过大的时候就会是效率变得非常的底。<br>（3）消耗内存：当针对一个ArrayList频繁的进行add操作的时候，底层数组的实现方式是将原数组copy再在后边添加一个新的元素，当创建数据处理完成之后原数组就被是为存储的垃圾会被jvm回收，并且每次复制新数组都会在原数组的基础之上扩容都1.5倍，扩容的部分如果数据放不满就会被空限制，因此频繁的对Arraylist进行add操作系统内存的消耗是比较大的。</p>
+<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p>1、LinkedList集合是链表是集合，主要分为：单链表、双链表和循环链表。主要模式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    LinkedList list = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">~~~  </span><br><span class="line">链表的模式可以形象的想象成为一个链条将数据有序的连接起来。这里的每个元素都称之为node节点。整合起来链表就是使用链条模式向node连接起来。  </span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、node节点的和链表结构</span><br><span class="line">~~~java</span><br><span class="line">    list.add(<span class="string">"11"</span>);</span><br><span class="line">    list.add(<span class="string">"12"</span>);</span><br><span class="line">    list.add(<span class="string">"13"</span>);</span><br><span class="line">    list.add(<span class="string">"14"</span>);</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>以上程序中的add方法就是在不断创建node节点，每个node节点都对应有一个内存地址，在一个node节点中会存放着两个元素，一个是value值（11,12,13….），另个则是Node next（内存地址值）。node next在第一次创建的时候是null，当下一次创建node时，新的node会把自己的内存地址给上一个node next，这个就形成了node和node之间的关系。<br>这里需要了解的是由于node每一次都是在内存中new出来的，因此<strong>node的元素不是连续的</strong>，所以LinkedList元素也是不连续的。</p>
+<p>当创建一个LinkedList对象的时候，LinkedList在堆内存中也会存在一个内存地址，在linkedList内部也会存放着两个成员，一个是size，记录着node元素的个数，另一个是node frist，存放着node链的第一个内存地址值，也就是说Linkedlist也指向了第一个node节点，这样一来一个完整的链条结构就完成了。</p>
+<p>3、LinkedList的优势和不足。<br>优势：优化内存空间。<br>（1）从add的角度：从它的底层模式不难看出LinkedList是每一次创建的时候占据一块内存空间，将自己的内存地址赋给上一个node 的node next，整体不没有多余的空余的浪费。<br>（2）从remove角度：当删除集合中的某一个node时，被删除的node连带内存地址一起被jvm回收，上一个node节点的node next会自动指向被删除node的下一个node节点上。这样会很容易的释放了空间。<br>不足：检索慢<br>（1）、检索慢：因为LinkedList底层的实现是链表模式，因此没有角标索引的感念因此检索的速度远远比不上ArrayList；<br>检索流程是首先需要找到LinkedList中的next frist对应的内存地址 在拿到node next 实际是一个循环遍历取值。</p>
+<p>4、LinkedList的特点：<br>不连续：上边已经提及到了不连续的原因，这是由实现模式决定的，因为每一次new node时内存地址不连续，因此LinkedList里边的内容不连续。</p>
+<h3 id="LinkedList单项列表和双向列表"><a href="#LinkedList单项列表和双向列表" class="headerlink" title="LinkedList单项列表和双向列表"></a>LinkedList单项列表和双向列表</h3><p>在实现的方式和对外提供的方法上看LinkedList和ArrayList存在很大的相同点，这样的做的主要目的可能处于集合体系的完整性。<br>单项列表的主要含义就是从LinkedList出发放最后一个node方向；<br>双向列表就是正好相反，此时需要明确一点LinkedList中会多了一个成员就是node last 用来记录后一个node的内存地址。同时每个node中会增加一个记录前一个node内存地址的参数pre。这样双向列表整体模式就是获得了。<br>双向列表的运行效率很可能高于单项列表。官方JDK中对LinkedList提供了如下方法:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">addFirst();</span><br><span class="line">addlast();</span><br><span class="line">getFirst();</span><br><span class="line">getLast();</span><br><span class="line">removeFirst();</span><br><span class="line">removeLast();</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>1、异常<br>当LinkedList集合为空，也就是说集合中没有数据无论是get还是remove都会抛出异常：没有元素异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread <span class="string">"main"</span> java.util.NoSuchElementException</span><br><span class="line">    at java.util.LinkedList.getFirst(Unknown Source)</span><br></pre></td></tr></table></figure>
+<p>jdk1.6以后 LinkedList退出了一种新的方式：获取peekFirst();/peekLast();移除pollFirst()/pollLast;方法，在集合中没有数据的情况下不抛出异常而返回空值null，一定程度可以替代之前的方法。</p>
+<p>2、遍历<br>这里介绍三种方式 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	LinkedList&lt;String&gt; list = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">	list.addFirst(<span class="string">"yi"</span>);</span><br><span class="line">	list.addFirst(<span class="string">"2"</span>);</span><br><span class="line">	list.addFirst(<span class="string">"3i"</span>);</span><br><span class="line">	list.addFirst(<span class="string">"i4"</span>);</span><br><span class="line"></span><br><span class="line">       <span class="comment">//迭代器</span></span><br><span class="line">       <span class="keyword">for</span>(Iterator&lt;String&gt; str = list.iterator();str.hasNext();)&#123;</span><br><span class="line">		System.out.println(<span class="string">"Iterator "</span>+str.next());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//for循环</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list.size();i++)&#123;</span><br><span class="line">		System.out.println(<span class="string">"for "</span>+list.get(i));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//移除遍历</span></span><br><span class="line">	<span class="keyword">while</span>(!list.isEmpty())&#123;		</span><br><span class="line">		System.out.println(list.removeFirst());	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong>移除遍历效率是最高的，但是这种遍历方法<strong>会删除原始数据</strong>，因此使用的时候需要谨慎考虑之后在使用。</p>
+
       
 
       
@@ -269,7 +293,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/file/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/26/LinkedList/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,6 +305,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/16/webservice%E6%9C%8D%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webservice服务</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -302,7 +336,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LinkedList和ArrayList"><span class="toc-number">1.</span> <span class="toc-text">LinkedList和ArrayList</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList和LinkedList的比较"><span class="toc-number">2.</span> <span class="toc-text">ArrayList和LinkedList的比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList"><span class="toc-number">2.1.</span> <span class="toc-text">ArrayList</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LinkedList"><span class="toc-number">2.2.</span> <span class="toc-text">LinkedList</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LinkedList单项列表和双向列表"><span class="toc-number">2.3.</span> <span class="toc-text">LinkedList单项列表和双向列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">2.4.</span> <span class="toc-text">其他</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -340,7 +374,7 @@
   
 
   
-  <div id="SOHUCS" sid="" ></div> 
+  <div id="SOHUCS" sid="LinkedList" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -391,7 +425,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
