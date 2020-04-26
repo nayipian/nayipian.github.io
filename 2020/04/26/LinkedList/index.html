@@ -16,7 +16,7 @@
 <meta property="og:description" content="本期针对LinkedList涉及到先关问题进行整理，通过与ArrayList的比较说明进行一些阐述。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-26T07:27:23.591Z">
-<meta property="article:modified_time" content="2020-04-26T07:32:39.557Z">
+<meta property="article:modified_time" content="2020-04-26T07:41:30.120Z">
 <meta property="article:author" content="捕猹少年">
 <meta name="twitter:card" content="summary">
   
@@ -192,10 +192,16 @@
 
 <h2 id="ArrayList和LinkedList的比较"><a href="#ArrayList和LinkedList的比较" class="headerlink" title="ArrayList和LinkedList的比较"></a>ArrayList和LinkedList的比较</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>ArrayList是在集合体系中最开始接触的集合，也是在实际开发中出镜频率比较高的集合。基本模式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
 <p>ArrayList底层是现实是数组，既然是数组，那么很多情况与ArrayList与数组关系很密切。对于数组来说其特点之一就是在初始化的时候需要指定其长度，作为对数组的升级版，ArrayList不需要在初始化在定义长度，而是实现了动态数组长度的变化。<br>对此提出疑问ArrayList是如何实现动态数组长度的变化？<br>基本原理是：ArrayList当它在调用add()方法的时候，首先做的是判断当前数组是否还可以放下要添加的数据，如果可以放下，就会将该数组元素放在上一个数据的后边；如果放不下，ArrayList将会新开辟一个数组，同时将原数组中的数据copy到新数组中同时在将新的数据放在新copy的数据后边。</p>
 <p>ArrayList的特点：查询快，增删慢，消耗内存。<br>（1）查询快：因为数组的查询是根据“索引”角标进行的检索，因此查询的速度比较快。<br>（2）增删慢：主要的原因也是因为数组和Arraylist的特性造成的，首先但add值的时候需要计算出指定位置，并且将指定位置的值一次向后移动，当remove值的时候，删除之后后边的值需要往前移动一位，当集合内的数据，也就是说size的值过大的时候就会是效率变得非常的底。<br>（3）消耗内存：当针对一个ArrayList频繁的进行add操作的时候，底层数组的实现方式是将原数组copy再在后边添加一个新的元素，当创建数据处理完成之后原数组就被是为存储的垃圾会被jvm回收，并且每次复制新数组都会在原数组的基础之上扩容都1.5倍，扩容的部分如果数据放不满就会被空限制，因此频繁的对Arraylist进行add操作系统内存的消耗是比较大的。</p>
 <h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p>1、LinkedList集合是链表是集合，主要分为：单链表、双链表和循环链表。主要模式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    LinkedList list = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">~~~  </span><br><span class="line">链表的模式可以形象的想象成为一个链条将数据有序的连接起来。这里的每个元素都称之为node节点。整合起来链表就是使用链条模式向node连接起来。  </span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、node节点的和链表结构</span><br><span class="line">~~~java</span><br><span class="line">    list.add(<span class="string">"11"</span>);</span><br><span class="line">    list.add(<span class="string">"12"</span>);</span><br><span class="line">    list.add(<span class="string">"13"</span>);</span><br><span class="line">    list.add(<span class="string">"14"</span>);</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LinkedList list = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>链表的模式可以形象的想象成为一个链条将数据有序的连接起来。这里的每个元素都称之为node节点。整合起来链表就是使用链条模式向node连接起来。  </p>
+<p>2、node节点的和链表结构</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list.add(<span class="string">"11"</span>);</span><br><span class="line">list.add(<span class="string">"12"</span>);</span><br><span class="line">list.add(<span class="string">"13"</span>);</span><br><span class="line">list.add(<span class="string">"14"</span>);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
 <p>以上程序中的add方法就是在不断创建node节点，每个node节点都对应有一个内存地址，在一个node节点中会存放着两个元素，一个是value值（11,12,13….），另个则是Node next（内存地址值）。node next在第一次创建的时候是null，当下一次创建node时，新的node会把自己的内存地址给上一个node next，这个就形成了node和node之间的关系。<br>这里需要了解的是由于node每一次都是在内存中new出来的，因此<strong>node的元素不是连续的</strong>，所以LinkedList元素也是不连续的。</p>
 <p>当创建一个LinkedList对象的时候，LinkedList在堆内存中也会存在一个内存地址，在linkedList内部也会存放着两个成员，一个是size，记录着node元素的个数，另一个是node frist，存放着node链的第一个内存地址值，也就是说Linkedlist也指向了第一个node节点，这样一来一个完整的链条结构就完成了。</p>
 <p>3、LinkedList的优势和不足。<br>优势：优化内存空间。<br>（1）从add的角度：从它的底层模式不难看出LinkedList是每一次创建的时候占据一块内存空间，将自己的内存地址赋给上一个node 的node next，整体不没有多余的空余的浪费。<br>（2）从remove角度：当删除集合中的某一个node时，被删除的node连带内存地址一起被jvm回收，上一个node节点的node next会自动指向被删除node的下一个node节点上。这样会很容易的释放了空间。<br>不足：检索慢<br>（1）、检索慢：因为LinkedList底层的实现是链表模式，因此没有角标索引的感念因此检索的速度远远比不上ArrayList；<br>检索流程是首先需要找到LinkedList中的next frist对应的内存地址 在拿到node next 实际是一个循环遍历取值。</p>
