@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>oralce关键字 | Gordo</title><meta name="keywords" content="java,Springboot,微服务"><meta name="author" content="捕猹少年"><meta name="copyright" content="捕猹少年"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本期主要介绍一下Oracle中比较常用的方法和关键字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oralce关键字">
+<meta property="og:url" content="https://gitee.com/zhangyangibm/zhangyangibm.git/2020/01/01/Oracle%E5%85%B3%E9%94%AE%E5%AD%97/index.html">
+<meta property="og:site_name" content="Gordo">
+<meta property="og:description" content="本期主要介绍一下Oracle中比较常用的方法和关键字">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/zhangyangibm/zhangyangibm.git/img/Oracle.png">
+<meta property="article:published_time" content="2020-01-01T14:47:47.000Z">
+<meta property="article:modified_time" content="2022-02-26T06:41:40.098Z">
+<meta property="article:author" content="捕猹少年">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="Springboot">
+<meta property="article:tag" content="微服务">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/zhangyangibm/zhangyangibm.git/img/Oracle.png"><link rel="shortcut icon" href="/zhangyangibm/img/favicon.png"><link rel="canonical" href="https://gitee.com/zhangyangibm/zhangyangibm.git/2020/01/01/Oracle%E5%85%B3%E9%94%AE%E5%AD%97/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/zhangyangibm/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/zhangyangibm/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'oralce关键字',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-26 14:41:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/zhangyangibm/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div><div class="data-item"><a href="/zhangyangibm/tags/"><div class="headline">标签</div><div class="length-num">21</div></a></div><div class="data-item"><a href="/zhangyangibm/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/zhangyangibm/">Gordo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">oralce关键字</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-01-01T14:47:47.000Z" title="发表于 2020-01-01 22:47:47">2020-01-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-26T06:41:40.098Z" title="更新于 2022-02-26 14:41:40">2022-02-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/zhangyangibm/categories/%E6%96%87%E7%AB%A0/">文章</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/zhangyangibm/categories/%E6%96%87%E7%AB%A0/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="oralce关键字"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><p>本期主要介绍一下Oracle中比较常用的方法和关键字</p>
+<span id="more"></span>
+
+<h3 id="1、TRIM（String），RTRIM（String），LTRIM（String）"><a href="#1、TRIM（String），RTRIM（String），LTRIM（String）" class="headerlink" title="1、TRIM（String），RTRIM（String），LTRIM（String）"></a>1、TRIM（String），RTRIM（String），LTRIM（String）</h3><pre><code>（1）语法：rtrim（String），trim（String），ltrim（String）。
+（2）TRIM去除指定字符串string的左右空格，rtrim去右侧空格，ltrim去掉左侧空格。
+</code></pre>
+<h3 id="2、TO-CHAR关键字："><a href="#2、TO-CHAR关键字：" class="headerlink" title="2、TO_CHAR关键字："></a>2、TO_CHAR关键字：</h3><pre><code>（1）语法：to_char(&#39;20180102&#39;,&#39;yyyyMMdd&#39;);to_char(999,&#39;99999&#39;),to_char(125.8, &#39;999D9&#39;)
+（2）解释：将其他的数据类型转化为字节。
+（3）使用：
+    ①select to_char(&#39;20180102&#39;,&#39;yyyy-MM-dd&#39;) from dual；→&quot;2018-01-02&quot;
+    ②select to_char(999,&#39;99999&#39;) from dual；→转化后设置5个占位符 &quot;  999&quot;
+    ③select to_char(125.8, &#39;999D99&#39;) from dual；→转化后保留两位小数&quot;125.80&quot;
+</code></pre>
+<h3 id="3、NVL关键字："><a href="#3、NVL关键字：" class="headerlink" title="3、NVL关键字："></a>3、NVL关键字：</h3><pre><code>（1）语法：NVL(目标值,0)。
+（2）解释:如果&quot;目标值&quot;是null的话，默认值为0。
+</code></pre>
+<h3 id="4、split关键字（方法）：split方法创建和调用的方法如下："><a href="#4、split关键字（方法）：split方法创建和调用的方法如下：" class="headerlink" title="4、split关键字（方法）：split方法创建和调用的方法如下："></a>4、split关键字（方法）：split方法创建和调用的方法如下：</h3><pre><code>创建：
+create or replace function f_split(p_str varchar2,p_separator varchar2) return SPLIT_ARRAY is
+     v_str varchar2(4000);
+     v_split_array SPLIT_ARRAY := SPLIT_ARRAY();
+     v_index binary_integer := 0;
+   begin
+     if p_str is null or p_separator is null then
+       return v_split_array;
+     end if;
+     v_str := p_str;
+     --先trim前后的p_separator
+     --如果以p_separator开头则ltrim
+     if instr(v_str,p_separator,1) = 1 then
+       v_str := ltrim(v_str,p_separator);
+     end if;
+     ----如果以p_separator结尾则rtrim
+     if instr(v_str,p_separator,-1) = (length(v_str) - length(p_separator) + 1) then
+       v_str := rtrim(v_str,p_separator);
+     end if;
+     if length(v_str) = 0 then
+       return v_split_array;
+     end if;
+     while instr(v_str,p_separator) != 0 loop
+       --如果两个p_separator相邻则不加入v_split_array中
+       if length(substr(v_str,1,instr(v_str,p_separator) - 1)) != 0 then
+         v_index := v_index + 1;
+         v_split_array.extend;
+         v_split_array(v_index) := substr(v_str,1,instr(v_str,p_separator) - 1);
+       end if;
+       v_str := substr(v_str,instr(v_str,p_separator) + length(p_separator));
+     end loop;
+     if length(v_str) != 0 then
+       v_split_array.extend;
+       v_split_array(v_index + 1) := v_str;
+     end if;
+     return v_split_array;
+
+  end f_split;
+调用：
+SELECT COLUMN_VALUE AS ID FROM TABLE(F_SPLIT(PRM_AAC020, &#39;,&#39;))
+</code></pre>
+<h3 id="5、MERGE-INTO："><a href="#5、MERGE-INTO：" class="headerlink" title="5、MERGE INTO："></a>5、MERGE INTO：</h3><pre><code>（1）语法：
+merge into语法：
+    merge into [target-table] a using [source-table sql] b on([conditional     expression] and [...]...)  
+    when matched then  
+        [update sql]  
+    when not matched then  
+        [insert sql]
+（2）解释：判断Ｂ表和Ａ表是否满足on中条件，如果满足则用b表去更新a表，如果不满足，则将b表数据插入a表但是有很多可选项。
+（3）实例：
+           table1 a_merge 字段 id name year 
+    table2 b_merge 字段 id aid name year city
+    table3 c_merge 字段 id name city
+    ①两张表操作：
+    --MERGE INTO 主表；
+    --USING()需要对比的，
+    --on条件：如果 a_merge表的id=b_merge表的id，那么将 a_merge（主表）的name
+    --字段更新为b_merge表对应的name，否则将b_merge的数据插入到a_merge（主表）中。
+    MERGE INTO a_merge T1
+          USING (SELECT * FROM b_merge) T2
+    ON (T1.id = T2.aid)
+    WHEN MATCHED THEN
+         UPDATE SET T1.NAME = T2.NAME,T1.year=T2.YEAR
+    WHEN NOT MATCHED THEN 
+        INSERT (ID,NAME,YEAR) VALUES(T2.ID,T2.NAME,t2.year);
+    ②单张表操作：
+    --有些java框架中针对单张表的操作的时候会出现这样的操作
+    --如果该条数据存在id 那么根据id做，
+         --如果该条数据不存在id 那么做insert操作
+    MERGE INTO LOGINPER T1
+         USING (SELECT COUNT(1) AS ids FROM LOGINPER a WHERE a.pro001=&#39;1000112&#39;) T2
+     ON (T2.IDS&gt;0)
+    WHEN MATCHED THEN
+      UPDATE SET T1.PRO002 = &#39;微信&#39; WHERE T1.pro001=&#39;1000112&#39;
+    WHEN NOT MATCHED THEN 
+      INSERT (T1.PRO001,T1.PRO002) VALUES(sys_guid(),&#39;林夏&#39;);
+</code></pre>
+<h3 id="6、WITH…AS…"><a href="#6、WITH…AS…" class="headerlink" title="6、WITH…AS…"></a>6、WITH…AS…</h3><pre><code>（1）语法：基本语法格式→with 表别名 as sql
+（2）解释：虚拟视图 可在复杂sql语句（或较大的sql）中使用可提高效率、提高代码的可视性和可续性。         
+（3）实例：
+    WITH 
+       a AS (SELECT * FROM a_merge),
+       b AS (SELECT * FROM b_merge),
+        c AS (SELECT * FROM c_merge);
+    select * from a,b where a.id = b.id;
+</code></pre>
+<h3 id="7、-DECODE关键字"><a href="#7、-DECODE关键字" class="headerlink" title="7、 DECODE关键字"></a>7、 DECODE关键字</h3><pre><code>（1）语法：DECODE(运算结果,值1,值2,值3)
+（2）解释：DECODE方法相当于if..else.. 也类似于三目运算符，
+        如果“运算结果”= 值1的话→返回值2，否则如果不等于→返回值3。
+</code></pre>
+<h3 id="8、DISTINCT关键字"><a href="#8、DISTINCT关键字" class="headerlink" title="8、DISTINCT关键字"></a>8、DISTINCT关键字</h3><pre><code>（1）语法: Select DISTINCT STR001 from table1 where 条件1;
+（2）解释：去重复值。
+（3）DISTINCT函数：语法要求查询的结果一个或多个字段，如果后边跟两个（或以上）字段，查询结果是根据两个字段分别去重的。
+</code></pre>
+<h3 id="9、身份证校验方法SUBSTR（截取）和MOD（取余）"><a href="#9、身份证校验方法SUBSTR（截取）和MOD（取余）" class="headerlink" title="9、身份证校验方法SUBSTR（截取）和MOD（取余）"></a>9、身份证校验方法SUBSTR（截取）和MOD（取余）</h3><pre><code>设定值：ITEM_RYXX 18位身份证号
+方法：mod(substr(ITEM_RYXX,15,1),2)
+（1）substr（）：Oracle数据库字符串截取的方法。substr（“字符串”，起始点，结束点）
+         注：起始点是从1开始不是从0开始，下边的例子：
+         substr(&#39;201711211009365E65751B2426006AE053AC123233A6AF&#39;,1,4) 截取的值就是“2017”
+（2）mod（）：Oracle数据库取余的方法。mod（目标值，除数）。
+</code></pre>
+<h3 id="10、LENGTH关键字"><a href="#10、LENGTH关键字" class="headerlink" title="10、LENGTH关键字"></a>10、LENGTH关键字</h3><pre><code>（1）语法：length(“字符串”)
+（2）解释：获取字符串的长度
+（3）使用方法：Select length(&quot;ITEM_RYXX.Str002&quot;) from dual;
+</code></pre>
+<h3 id="11、TO-DATE关键字"><a href="#11、TO-DATE关键字" class="headerlink" title="11、TO_DATE关键字"></a>11、TO_DATE关键字</h3><pre><code>（1）语法：TO_DATE(&quot;1990-01-23&quot;, &#39;yyyy-mm-dd&#39;)。
+（2）解释：将目标函数（日期格式）转化为date类型。
+</code></pre>
+<h3 id="12、CASE关键字"><a href="#12、CASE关键字" class="headerlink" title="12、CASE关键字"></a>12、CASE关键字</h3><pre><code>（1）语法：case的目的实现数据库表转置。重新拼成一个表，用来显示。
+   case  when
+       ...
+        then
+            ...
+        else
+       ...
+      end;
+（2）解释：
+    CASE WHEN  
+          ITEM_RYXX.STR004 IS NULL 
+    THEN 
+         NULL　
+    ELSE 
+          F_R_AA10_AAA102(&#39;AAC005&#39;, ITEM_RYXX.STR004)
+    END;
+</code></pre>
+<h3 id="13、TO-NUMBER关键字"><a href="#13、TO-NUMBER关键字" class="headerlink" title="13、TO_NUMBER关键字"></a>13、TO_NUMBER关键字</h3><pre><code>（1）语法：to_number（&#39;阿拉伯数字&#39;）.
+（2）解释：将字符串转化为数字.
+（3）应用：
+    ①SELECT to_number(&#39;1021&#39;) FROM dual; → 显示 1021；
+    ②SELECT to_number(&#39;12454.8-&#39;,&#39;99999D9S&#39;) FROM dual; →显示 -12454.8；
+    ③SELECT to_number(&#39;12,454.8-&#39;,&#39;99G999D9S&#39;) FROM dual;→ 显示 -12454.8；
+    ④SELECT to_number
+    (&#39;12,454.8&#39;,&#39;99G999D9&#39;) FROM dual;→ 显示 12454.8；
+</code></pre>
+<h3 id="14、MINUS-关键字"><a href="#14、MINUS-关键字" class="headerlink" title="14、MINUS 关键字"></a>14、MINUS 关键字</h3><pre><code>（1）语法：select * from B minus select * from A;
+（2）解释：比较表结构相同的两表之间的差异用minus。
+（3）实例：select * from ZB01_ZHY a WHERE a.azb010 LIKE &#39;%sy%&#39; minus select * from ZB01;
+
+    SELECT * FROM HC02_BAK
+    MINUS
+    SELECT * FROM HC02_BAK@Local;
+</code></pre>
+<h3 id="15、REVERSE-关键字"><a href="#15、REVERSE-关键字" class="headerlink" title="15、REVERSE 关键字"></a>15、REVERSE 关键字</h3><pre><code>（1）、解释：
+    reverse 英[rɪˈvɜ:s] 美[rɪˈvɜ:rs]
+    vt.（使） 反转; （使） 颠倒; 掉换，交换; [法] 撤消，推翻;
+（2）、实例
+    ①在Oracle中表示倒序排序
+        例如：select reverse(&#39;123456&#39;) ,REVERSE(&#39;ABCDEFG&#39;) from dual;
+    结果显示：
+    
+    ②数据循环：倒序循环
+      For X in reverse 1..10 loop 
+        ...
+    end loop;
+</code></pre>
+<h3 id="16、数据库删除分割符"><a href="#16、数据库删除分割符" class="headerlink" title="16、数据库删除分割符"></a>16、数据库删除分割符</h3><pre><code>String hql = &quot;delete from RC21 where instr(arc210 || &#39;,&#39; , &#39;&quot; + arc210s + &quot;&#39; ) &gt;0 )&quot; ;
+注：测试不建议使用
+</code></pre>
+<h3 id="17、BETWEEN…AND-在…之间"><a href="#17、BETWEEN…AND-在…之间" class="headerlink" title="17、BETWEEN…AND:在…之间"></a>17、BETWEEN…AND:在…之间</h3><pre><code>     语法：使用在where 之后 表示条件。
+     解释：表示在“大于等于…小于”&gt;= 并且 &lt;。
+     实例： SELECT aae036 FROM zw11 WHERE aae036 BETWEEN  to_date(&#39;2017/11/17&#39;, &#39;yyyy-mm-dd&#39;) and
+          to_date(&#39;2017/12/6&#39;, &#39;yyyy-mm-dd&#39;) ;
+</code></pre>
+<h3 id="18、TRUNC-关键字"><a href="#18、TRUNC-关键字" class="headerlink" title="18、TRUNC 关键字"></a>18、TRUNC 关键字</h3><pre><code>     语法：在Oracle数据库中Trunc是截取函数用在日期类型上，截取到日期或时间 译：“剪枝”
+     实例：
+</code></pre>
+<p>以下例子：日期以“2012-12-19 14:30:50”为例<br>       （1）、 SELECT TRUNC(SYSDATE,’MI’) FROM DUAL;–默认截取到日，得到日期“2018&#x2F;6&#x2F;25”;<br>       （2）、如果值为“2012-12-19 14:30:50”的日期变量 TRUNC(SYSDATE)得到日期为2012&#x2F;12&#x2F;19和TRUNC(SYSDATE,’DD’)一样;<br>       （3）、如果TRUNC(SYSDATE,’YYYY’)，→ 2012&#x2F;01&#x2F;01;<br>       （4）、如果TRUNC(SYSDATE,’MM’)，→ 2012&#x2F;12&#x2F;01;<br>       （5）、如果TRUNC(SYSDATE,’DD’)，→ 2012&#x2F;12&#x2F;19;<br>       （6）、如果TRUNC(SYSDATE,’HH’)，→ 2012-12-19 14:00:00；<br>       （7）、如果TRUNC(SYSDATE,’MI’)，→ 2012-12-19 14:30:00;<br>           （8）、如果TRUNC(SYSDATE,’SS’)，由于精度过高 不支持 报错;<br>           （9）、获取当前日期所在周的起始时间<br>             BETWEEN TRUNC(TO_DATE(TO_CHAR(SYSDATE, ‘YYYY-MM-DD’), ‘YYYY-MM-DD’), ‘IW’) AND<br>                           TRUNC(TO_DATE(TO_CHAR(SYSDATE, ‘YYYY-MM-DD’), ‘YYYY-MM-DD’), ‘IW’) + 6</p>
+<h3 id="19、round关键字："><a href="#19、round关键字：" class="headerlink" title="19、round关键字："></a>19、round关键字：</h3><pre><code>     语法：round(number1,number2);
+解释：number1 目标函数，number2保留的小数位数（写0或者不写默认为对整数位进行操作）；
+     实例：
+（1）select round(123.461) from dual;→ 123
+（2）select round(123.467,1) from dual;→123.5
+（3）select round(123.467,2) from dual;→123.47
+</code></pre>
+<h3 id="20、MONTHS-BETWEEN-关键字："><a href="#20、MONTHS-BETWEEN-关键字：" class="headerlink" title="20、MONTHS_BETWEEN 关键字："></a>20、MONTHS_BETWEEN 关键字：</h3><pre><code>     语法：MONTHS_BETWEEN(date1, date2) 
+     解释：date1与date2相差多长时间，（date1时间稍晚一点 大的日期放在前边）
+     实例：
+</code></pre>
+<p>（1）计算两个时间相差多长时间<br>           SELECT MONTHS_BETWEEN(SYSDATE, to_date(‘2018-01-23’,’yyyy-MM-dd’)) FROM dual;→.4166<br>（2）计算两个时间相差年月<br>           SELECT ROUND(MONTHS_BETWEEN(SYSDATE, to_date(‘2018-01-23’,’yyyy-MM-dd’)) &#x2F; 12, 1);→.4（四个月）</p>
+<h3 id="21、AVG关键字"><a href="#21、AVG关键字" class="headerlink" title="21、AVG关键字"></a>21、AVG关键字</h3><pre><code>    语法： avg（字段名）获取平均值
+    解释：Oracle中求统计平均值的方法；
+    实例：
+</code></pre>
+<p>（1）获取某个字段的数据统计的平均值 ： SELECT AVG(a.agb012_1)  FROM Gb01 a;</p>
+<h3 id="22、COALESCE关键字："><a href="#22、COALESCE关键字：" class="headerlink" title="22、COALESCE关键字："></a>22、COALESCE关键字：</h3><pre><code>语法：COALESCE
+实例：SELECT COALESCE(c1,c2,c3) AS ABC FROM Gc36; 
+解释：依次参考各参数表达式，遇到非null值即停止并返回该值。如果所有的表达式都是空值，最终将   返回一个空值。
+</code></pre>
+<h3 id="23、DEFAULT关键字："><a href="#23、DEFAULT关键字：" class="headerlink" title="23、DEFAULT关键字："></a>23、DEFAULT关键字：</h3><pre><code>场景：创建表字段设置默认值。
+现场：当表中摸某个字段设置默认值时，数据在做insert操作的情况下会默认给定一个默认值。
+insert时默认值失效的办法：针对当前的表单独创建一个视图view，针对这个视图保存的时候原表默认值属性属性失效。
+单表视图是可以insert操作的
+</code></pre>
+<h3 id="24、LEAD和LAG"><a href="#24、LEAD和LAG" class="headerlink" title="24、LEAD和LAG"></a>24、LEAD和LAG</h3><pre><code>场景：LEAD 需要获取当前数据下边几条数据 LAG获取当前数据上边第几条数据
+情景：（1）、查询当前数据，获取当前数据下一条数据的部分信息
+    SELECT B.*,
+           LEAD(B.UNIVERSITYNAME, 1,  B.AUN001) OVER(ORDER BY B.UNIVERSITYNAME) AS N_AZD08A,
+           LEAD(B.UNIVERSITYNUMVER, 1,  B.AUN002) OVER(ORDER BY B.UNIVERSITYNUMVER) AS N_AZD083,
+           LEAD(B.UNIVERSITYSTR, 1,  B.AUN005) OVER(ORDER BY B.UNIVERSITYSTR) AS N_AZD081
+      FROM UNIVERSITYINFO B 
+     ORDER BY B.AUN001;
+     （2）、查询当前数据，获取当前数据上一条数据的部分信息
+     SELECT B.*,
+           LAG(B.UNIVERSITYNAME, 1,  B.AUN001) OVER(ORDER BY B.UNIVERSITYNAME) AS N_AZD08A,
+           LAG(B.UNIVERSITYNUMVER, 1,  B.AUN002) OVER(ORDER BY B.UNIVERSITYNUMVER) AS N_AZD083,
+           LAG(B.UNIVERSITYSTR, 1,  B.AUN005) OVER(ORDER BY B.UNIVERSITYSTR) AS N_AZD081
+      FROM UNIVERSITYINFO B 
+     ORDER BY B.AUN001;
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">捕猹少年</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://gitee.com/zhangyangibm/zhangyangibm.git/2020/01/01/Oracle%E5%85%B3%E9%94%AE%E5%AD%97/">https://gitee.com/zhangyangibm/zhangyangibm.git/2020/01/01/Oracle%E5%85%B3%E9%94%AE%E5%AD%97/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://gitee.com/zhangyangibm/zhangyangibm.git" target="_blank">Gordo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/zhangyangibm/tags/java/">java</a><a class="post-meta__tags" href="/zhangyangibm/tags/Springboot/">Springboot</a><a class="post-meta__tags" href="/zhangyangibm/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务</a></div><div class="post_share"><div class="social-share" data-image="/zhangyangibm/img/Oracle.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/zhangyangibm/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/zhangyangibm/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/zhangyangibm/img/zhifubao.png" target="_blank"><img class="post-qr-code-img" src="/zhangyangibm/img/zhifubao.png" alt="zhifubao"/></a><div class="post-qr-code-desc">zhifubao</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/zhangyangibm/2020/03/12/%E4%BA%86%E8%A7%A3springboot/"><img class="prev-cover" src="/zhangyangibm/img/springboot_1.png" onerror="onerror=null;src='/zhangyangibm/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">了解springboot</div></div></a></div><div class="next-post pull-right"><a href="/zhangyangibm/2020/01/01/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%AB%98%E5%B9%B6%E5%8F%91/"><img class="next-cover" src="/zhangyangibm/img/thread.png" onerror="onerror=null;src='/zhangyangibm/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">多线程与高并发</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/zhangyangibm/2019/12/26/%E6%B5%85%E8%B0%88springboot/" title="浅谈Springboot"><img class="cover" src="/zhangyangibm/img/Springboot.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-12-26</div><div class="title">浅谈Springboot</div></div></a></div><div><a href="/zhangyangibm/2020/12/10/Hadoop%E9%9B%86%E7%BE%A4/" title="Hadoop集群"><img class="cover" src="/zhangyangibm/img/hadoop.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-10</div><div class="title">Hadoop集群</div></div></a></div><div><a href="/zhangyangibm/2020/03/12/%E4%BA%86%E8%A7%A3springboot/" title="了解springboot"><img class="cover" src="/zhangyangibm/img/springboot_1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-12</div><div class="title">了解springboot</div></div></a></div><div><a href="/zhangyangibm/2019/11/26/%E9%9B%86%E5%90%88LinkedList&Map/" title="集合LinkedList&Map"><img class="cover" src="/zhangyangibm/img/collection.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-11-26</div><div class="title">集合LinkedList&Map</div></div></a></div><div><a href="/zhangyangibm/2020/07/23/webservice/" title="webservice"><img class="cover" src="/zhangyangibm/img/webservice.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-23</div><div class="title">webservice</div></div></a></div><div><a href="/zhangyangibm/2020/01/01/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E9%AB%98%E5%B9%B6%E5%8F%91/" title="多线程与高并发"><img class="cover" src="/zhangyangibm/img/thread.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-01-01</div><div class="title">多线程与高并发</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/zhangyangibm/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">捕猹少年</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/zhangyangibm/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div><div class="card-info-data-item"><a href="/zhangyangibm/tags/"><div class="headline">标签</div><div class="length-num">21</div></a></div><div class="card-info-data-item"><a href="/zhangyangibm/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a id="card-info-btn" href="https://gitee.com/zhangyangibm"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">大家好，欢迎来到我的频道，<br>新频道从2022年正式Github迁移至Gitee，感谢您一如既往的关注和支持！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81TRIM%EF%BC%88String%EF%BC%89%EF%BC%8CRTRIM%EF%BC%88String%EF%BC%89%EF%BC%8CLTRIM%EF%BC%88String%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">1、TRIM（String），RTRIM（String），LTRIM（String）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81TO-CHAR%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">2、TO_CHAR关键字：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81NVL%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">3、NVL关键字：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81split%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%88%E6%96%B9%E6%B3%95%EF%BC%89%EF%BC%9Asplit%E6%96%B9%E6%B3%95%E5%88%9B%E5%BB%BA%E5%92%8C%E8%B0%83%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">4、split关键字（方法）：split方法创建和调用的方法如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81MERGE-INTO%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">5、MERGE INTO：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E3%80%81WITH%E2%80%A6AS%E2%80%A6"><span class="toc-number">6.</span> <span class="toc-text">6、WITH…AS…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E3%80%81-DECODE%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">7.</span> <span class="toc-text">7、 DECODE关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8%E3%80%81DISTINCT%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">8.</span> <span class="toc-text">8、DISTINCT关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9%E3%80%81%E8%BA%AB%E4%BB%BD%E8%AF%81%E6%A0%A1%E9%AA%8C%E6%96%B9%E6%B3%95SUBSTR%EF%BC%88%E6%88%AA%E5%8F%96%EF%BC%89%E5%92%8CMOD%EF%BC%88%E5%8F%96%E4%BD%99%EF%BC%89"><span class="toc-number">9.</span> <span class="toc-text">9、身份证校验方法SUBSTR（截取）和MOD（取余）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10%E3%80%81LENGTH%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">10.</span> <span class="toc-text">10、LENGTH关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11%E3%80%81TO-DATE%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">11.</span> <span class="toc-text">11、TO_DATE关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12%E3%80%81CASE%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">12.</span> <span class="toc-text">12、CASE关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13%E3%80%81TO-NUMBER%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">13.</span> <span class="toc-text">13、TO_NUMBER关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14%E3%80%81MINUS-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">14.</span> <span class="toc-text">14、MINUS 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15%E3%80%81REVERSE-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">15.</span> <span class="toc-text">15、REVERSE 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%A0%E9%99%A4%E5%88%86%E5%89%B2%E7%AC%A6"><span class="toc-number">16.</span> <span class="toc-text">16、数据库删除分割符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17%E3%80%81BETWEEN%E2%80%A6AND-%E5%9C%A8%E2%80%A6%E4%B9%8B%E9%97%B4"><span class="toc-number">17.</span> <span class="toc-text">17、BETWEEN…AND:在…之间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18%E3%80%81TRUNC-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">18.</span> <span class="toc-text">18、TRUNC 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19%E3%80%81round%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A"><span class="toc-number">19.</span> <span class="toc-text">19、round关键字：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20%E3%80%81MONTHS-BETWEEN-%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A"><span class="toc-number">20.</span> <span class="toc-text">20、MONTHS_BETWEEN 关键字：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21%E3%80%81AVG%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">21.</span> <span class="toc-text">21、AVG关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22%E3%80%81COALESCE%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A"><span class="toc-number">22.</span> <span class="toc-text">22、COALESCE关键字：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23%E3%80%81DEFAULT%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A"><span class="toc-number">23.</span> <span class="toc-text">23、DEFAULT关键字：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24%E3%80%81LEAD%E5%92%8CLAG"><span class="toc-number">24.</span> <span class="toc-text">24、LEAD和LAG</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/zhangyangibm/2022/02/25/hello-world/" title="Hello World"><img src="/zhangyangibm/img/helloworld.png" onerror="this.onerror=null;this.src='/zhangyangibm/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/zhangyangibm/2022/02/25/hello-world/" title="Hello World">Hello World</a><time datetime="2022-02-25T10:02:16.186Z" title="发表于 2022-02-25 18:02:16">2022-02-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/zhangyangibm/2021/12/24/Docker%20for%20Linux/" title="Docker for Liunx"><img src="/zhangyangibm/img/docker.png" onerror="this.onerror=null;this.src='/zhangyangibm/img/404.jpg'" alt="Docker for Liunx"/></a><div class="content"><a class="title" href="/zhangyangibm/2021/12/24/Docker%20for%20Linux/" title="Docker for Liunx">Docker for Liunx</a><time datetime="2021-12-24T14:49:47.000Z" title="发表于 2021-12-24 22:49:47">2021-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/zhangyangibm/2021/05/03/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" title="MySql"><img src="/zhangyangibm/img/mysql.png" onerror="this.onerror=null;this.src='/zhangyangibm/img/404.jpg'" alt="MySql"/></a><div class="content"><a class="title" href="/zhangyangibm/2021/05/03/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" title="MySql">MySql</a><time datetime="2021-05-03T04:47:47.000Z" title="发表于 2021-05-03 12:47:47">2021-05-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/zhangyangibm/2020/12/10/Hadoop%E9%9B%86%E7%BE%A4/" title="Hadoop集群"><img src="/zhangyangibm/img/hadoop.png" onerror="this.onerror=null;this.src='/zhangyangibm/img/404.jpg'" alt="Hadoop集群"/></a><div class="content"><a class="title" href="/zhangyangibm/2020/12/10/Hadoop%E9%9B%86%E7%BE%A4/" title="Hadoop集群">Hadoop集群</a><time datetime="2020-12-10T14:47:47.000Z" title="发表于 2020-12-10 22:47:47">2020-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/zhangyangibm/2020/12/10/%E6%B5%85%E8%B0%88Spring/" title="浅谈spring"><img src="/zhangyangibm/img/spring.png" onerror="this.onerror=null;this.src='/zhangyangibm/img/404.jpg'" alt="浅谈spring"/></a><div class="content"><a class="title" href="/zhangyangibm/2020/12/10/%E6%B5%85%E8%B0%88Spring/" title="浅谈spring">浅谈spring</a><time datetime="2020-12-10T14:47:47.000Z" title="发表于 2020-12-10 22:47:47">2020-12-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 捕猹少年</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://butterfly.js.org/">blogChannel</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/zhangyangibm/js/utils.js"></script><script src="/zhangyangibm/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
